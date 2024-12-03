@@ -1,0 +1,9 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getLanguage } from '../../utils/global'
+const lang = getLanguage(Astro.request.url);
+---
+
+<Layout>
+    <h1 class="text-red-500">Olá</h1>
+</Layout>
