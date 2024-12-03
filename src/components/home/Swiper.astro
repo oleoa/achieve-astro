@@ -1,24 +1,49 @@
 ---
+interface Review {
+  name?: string,
+  comment?: string,
+  comentario?: string,
+  url?: string,
+  image?: string,
+}
+
 import Card from '../../components/home/swiper/Card.astro'
 
-const customers = [
-  {
-    "name": "Leonardo",
-    "image": "Leonardo",
-    "comment": "Hello",
-  },
-  {
-    "name": "Leonardo",
-    "image": "Leonardo",
-    "comment": "Hello",
-  },
-]
+import { Client } from '@notionhq/client';
+const notionToken = import.meta.env.NOTION_KEY;
+const notionDatabaseId = import.meta.env.NOTION_PAGE_ID;
+const notion = new Client({ auth: notionToken });
+const response = await notion.databases.query({ database_id: notionDatabaseId });
+const reviewsNotion = response.results;
+const reviews = reviewsNotion.map((review) => {
+
+  const reviewUpdated: Review = {};
+
+  if('properties' in review && 'title' in review.properties.Name && Array.isArray(review.properties.Name.title))
+    reviewUpdated.name = review.properties.Name.title[0].plain_text;
+
+  if('properties' in review && 'url' in review.properties.Url && typeof review.properties.Url.url == "string")
+    reviewUpdated.url = review.properties.Url.url;
+
+  if('properties' in review && 'url' in review.properties.Image && typeof review.properties.Image.url == "string")
+    reviewUpdated.image = review.properties.Image.url;
+
+  if('properties' in review && 'rich_text' in review.properties.Comment && Array.isArray(review.properties.Comment.rich_text))
+    reviewUpdated.comment = review.properties.Comment.rich_text[0].plain_text;
+
+  if('properties' in review && 'rich_text' in review.properties.Comentario && Array.isArray(review.properties.Comentario.rich_text))
+    reviewUpdated.comentario = review.properties.Comentario.rich_text[0].plain_text;
+
+  return reviewUpdated;
+})
 ---
 
-<div class="py-24">
+<div class="py-24 bg-blue-800/15 flex flex-col gap-12">
+
+    <span id="reviews-scroll" class="relative" style=" top: -6rem;"></span>
 
     <!-- Title -->
-    <h2 class="text-5xl font-bold flex items-center justify-center">
+    <h2 class="text-blue-800 text-5xl font-bold flex items-center justify-center">
         <a target="_blank" href="https://www.google.com/search?sca_esv=3cf5305f7235dc23&tbm=lcl&sxsrf=ADLYWIIjpL3gnJgjuGz15oNC7DzYxm7K5g:1715971983926&q=Achieve+Rent+a+Car+Reviews&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxK2NDEzM7UwNjQxMDMxMrU0NjMz2MDI-IpRyjE5IzO1LFUhKDWvRCFRwTmxCMgsy0wtL17EikcSAB9GV0BUAAAA&rldimm=9466583140642593660&hl=en-PT&sa=X&ved=2ahUKEwj49a7krZWGAxUzbKQEHX2PCgwQ9fQKegQILRAF#lkt=LocalPoiReviews">
             What our customers say
         </a>
@@ -29,11 +54,13 @@ const customers = [
 
         <div class="swiper-wrapper pt-4">
 
-            {customers.map((review) =>
+            {reviews.map((review) =>
               <Card
                   name={review.name}
+                  url={review.url}
                   image={review.image}
                   comment={review.comment}
+                  comentario={review.comentario}
               />
             )}
 
@@ -66,5 +93,20 @@ const swiper = new Swiper('.swiper', {
     disableOnInteraction: true,
   },
 });
+
+const checkreviews = document.getElementById("checkreviews");
+const reviews = document.getElementById("reviews-scroll");
+if(checkreviews)
+  checkreviews.addEventListener('click', () => {
+      if(reviews)
+        reviews.scrollIntoView({
+          behavior: "smooth"
+        });
+  });
+
+let system = document.getElementById('anyrentBookingsIframe');
+if (system) {
+  system.style.borderRadius = "0.375rem"
+}
 
 </script>
