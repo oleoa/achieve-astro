@@ -1,7 +1,6 @@
 ---
 import Navbar from '../components/Navbar.astro';
-import { getLanguage } from '../utils/global'
-const lang = getLanguage(Astro.request.url);
+const { lang } = Astro.params;
 ---
 
 <!doctype html>

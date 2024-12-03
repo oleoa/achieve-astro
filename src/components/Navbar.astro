@@ -1,9 +1,11 @@
 ---
 import Logo from "../assets/astro.svg"
-import { getLanguage, getPath } from '../utils/global'
-const lang = getLanguage(Astro.request.url);
+import Layout from '../layouts/Layout.astro';
+import Languages from "../assets/translations.json"
+
+const { lang } = Astro.params;
 const langPrefix = "/"+lang+"/";
-const path = getPath(Astro.request.url);
+const path = Astro.url.pathname.split('/')[2];
 
 const links = [
   {

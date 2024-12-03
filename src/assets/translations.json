@@ -1,0 +1,32 @@
+{
+  "pages": {
+
+    "home": {
+      "en": {
+        "title": "Home"
+      },
+      "pt": {
+        "title": "Início"
+      }
+    },
+
+    "seats": {
+      "en": {
+          "title": "Car Seats"
+        },
+        "pt": {
+          "title": "Cadeiras Auto"
+        }
+    },
+
+    "fleet": {
+      "en": {
+          "title": "Fleet"
+        },
+        "pt": {
+          "title": "Frota"
+        }
+    }
+
+  }
+}
