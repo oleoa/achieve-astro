@@ -1,7 +1,9 @@
 ---
-import Logo from "../assets/astro.svg"
+import Logo from "../assets/achieve.webp"
 import Layout from '../layouts/Layout.astro';
 import Languages from "../assets/translations.json"
+import PtFlag from '../assets/pt.jpg'
+import EnFlag from '../assets/en.jpg'
 
 const { lang } = Astro.params;
 const langPrefix = "/"+lang+"/";
@@ -37,16 +39,18 @@ const links = [
 const flags = [
   {
     "src": "/pt/"+path,
-    "name": "Pt"
+    "image": PtFlag.src,
+    "name": "Portuguese Flag"
   },
   {
     "src": "/en/"+path,
-    "name": "En"
+    "image": EnFlag.src,
+    "name": "English Flag"
   },
 ]
 ---
 
-<nav class="fixed top-0 left-0 w-full h-20 flex items-center justify-between p-4">
+<nav class="fixed top-0 left-0 w-full h-24 flex items-center justify-between p-8 bg-white text-blue-800">
 
     <div id="logo" class="flex items-center">
         <a href="/">
@@ -64,7 +68,9 @@ const flags = [
 
         <div id="languages" class="flex items-center gap-4">
             {flags.map((language) =>
-                <a href={language.src} class="border-2 border-black rounded-lg px-2 py-1">{language.name}</a>
+                <a href={language.src}>
+                    <img src={language.image} alt={language.name} class="rounded">
+                </a>
             )}
         </div>
 
