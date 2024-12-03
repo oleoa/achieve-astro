@@ -8,19 +8,27 @@ const path = getPath(Astro.request.url);
 const links = [
   {
     "src": langPrefix,
-    "name": "Home"
+    "name": (lang=="pt"?"Início":"Home")
   },
   {
     "src": langPrefix+"fleet",
-    "name": "Fleet"
+    "name": (lang=="pt"?"Frota":"Fleet")
   },
   {
     "src": langPrefix+"seats",
-    "name": "Car Seats"
+    "name": (lang=="pt"?"Cadeiras Auto":"Car Seats")
   },
   {
     "src": langPrefix+"accommodations",
-    "name": "Accommodations"
+    "name": (lang=="pt"?"Alojamentos":"Accommodations")
+  },
+  {
+    "src": langPrefix+"about",
+    "name": (lang=="pt"?"Sobre nós":"About Us")
+  },
+  {
+    "src": langPrefix+"contact",
+    "name": (lang=="pt"?"Contate-nos":"Contact Us")
   }
 ]
 
