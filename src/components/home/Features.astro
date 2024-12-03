@@ -1,0 +1,83 @@
+---
+import Insurance from '../icons/Insurance.astro'
+import Anywhere from '../../assets/icons/anywhere.svg'
+import Card from '../icons/Card.astro'
+import Driver from '../../assets/icons/driver.svg'
+import Roadside from '../../assets/icons/roadside.svg'
+import Mileage from '../../assets/icons/mileage.svg'
+
+const cards = [
+  {
+    "icon": "insurance",
+    "title": "Premium Insurance included",
+    "description": "Tranquility is essential when you travel. Premium Insurance has a deductible waiver and the coverage you need to protect yourself from unexpected mishaps.",
+  },
+  {
+    "icon": Anywhere.src,
+    "title": "Receive and return anywhere",
+    "description": "Whether at the airport door or your hotel, receive and return wherever you prefer. No queues, no waiting, and no long walks.",
+  },
+  {
+    "icon": "card",
+    "title": "No credit card required",
+    "description": "We believe in hassle-free rentals. We do not require a deposit, and we do not block your credit card.",
+  },
+  {
+    "icon": Driver.src,
+    "title": "Free additional driver",
+    "description": "Enjoy the freedom of free additional drivers. It's our way of ensuring that everyone experiences the trip together, at no extra cost.",
+  },
+  {
+    "icon": Roadside.src,
+    "title": "Roadside assistance",
+    "description": "Throughout your stay, you can count on our 24/7 roadside assistance. We are here to help you with whatever you need.",
+  },
+  {
+    "icon": Mileage.src,
+    "title": "Unlimited mileage",
+    "description": "Explore Madeira without limits, go wherever you want with total freedom, without worrying about additional costs.",
+  },
+]
+---
+
+<div id="why_us" class="w-full margin py-24 gap-12 flex flex-col">
+
+    <!-- Title -->
+    <h2 class="text-5xl font-bold">Why Choose Achieve Rent a Car</h2>
+
+    <!-- Description -->
+    <p class="pr-80">
+        Because for us <b>you are much more</b> than just a car rental.<br />
+        We prioritize <b>your satisfaction</b> and do our best to make you <b>feel welcomed</b> and <b>achieve</b> the goals you desire for your trip.<br />
+        We will provide all the information you need to feel <b>safe, well accompanied,</b> and <b>guided</b>.<br />
+        Check out how our customers feel about our services, access our Google Reviews.<br />
+    </p>
+
+    <!-- Buttons -->
+    <div>
+        <a href="">Book Now</a>
+        <a href="">Contact Us</a>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid grid-cols-3 gap-4">
+
+        {cards.map((feature) =>
+            <div class="border-2 border-black rounded-lg flex flex-col justify-start items-center gap-4 p-4">
+                {(
+                  feature.icon == "insurance")? (
+                    <Insurance />
+                  ):(
+                  feature.icon == "card")? (
+                    <Card />
+                  ):(
+                    <img src={feature.icon} alt={feature.title+" icon"} class="w-12 h-12">
+                )}
+                <h3 class="text-2xl">{feature.title}</h3>
+                <p class="text-center">{feature.description}</p>
+            </div>
+        )}
+
+    </div>
+
+</div>
