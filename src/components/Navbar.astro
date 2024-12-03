@@ -1,9 +1,10 @@
 ---
 import Logo from "../assets/achieve.webp"
-import Layout from '../layouts/Layout.astro';
-import Languages from "../assets/translations.json"
+
 import PtFlag from '../assets/pt.jpg'
 import EnFlag from '../assets/en.jpg'
+
+import HomeIcon from '../assets/icons/home.svg'
 
 const { lang } = Astro.params;
 const langPrefix = "/"+lang+"/";
@@ -12,27 +13,33 @@ const path = Astro.url.pathname.split('/')[2];
 const links = [
   {
     "src": langPrefix,
-    "name": (lang=="pt"?"Início":"Home")
+    "name": (lang=="pt"?"Início":"Home"),
+    "icon": HomeIcon.src
   },
   {
     "src": langPrefix+"fleet",
-    "name": (lang=="pt"?"Frota":"Fleet")
+    "name": (lang=="pt"?"Frota":"Fleet"),
+    "icon": HomeIcon.src
   },
   {
     "src": langPrefix+"seats",
-    "name": (lang=="pt"?"Cadeiras Auto":"Car Seats")
+    "name": (lang=="pt"?"Cadeiras Auto":"Car Seats"),
+    "icon": HomeIcon.src
   },
   {
     "src": langPrefix+"accommodations",
-    "name": (lang=="pt"?"Alojamentos":"Accommodations")
+    "name": (lang=="pt"?"Alojamentos":"Accommodations"),
+    "icon": HomeIcon.src
   },
   {
     "src": langPrefix+"about",
-    "name": (lang=="pt"?"Sobre nós":"About Us")
+    "name": (lang=="pt"?"Sobre nós":"About Us"),
+    "icon": HomeIcon.src
   },
   {
     "src": langPrefix+"contact",
-    "name": (lang=="pt"?"Contate-nos":"Contact Us")
+    "name": (lang=="pt"?"Contate-nos":"Contact Us"),
+    "icon": HomeIcon.src
   }
 ]
 
@@ -62,7 +69,7 @@ const flags = [
 
         <div id="links" class="flex items-center gap-4">
             {links.map((link) =>
-                <a href={link.src}>{link.name}</a>
+                <a href={link.src} class="flex gap-1"><img class="w-4" src={link.icon} alt={link.name+" icon"}>{link.name}</a>
             )}
         </div>
 
