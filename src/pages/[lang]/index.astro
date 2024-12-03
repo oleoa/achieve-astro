@@ -16,105 +16,18 @@ import Languages from "../../assets/translations.json"
 const { lang } = Astro.params as Params;
 const page = Languages.pages.home[lang];
 
-import Check from '../../assets/icons/check.svg'
-const list = [
-    "Atendimento avaliado em 5 estrelas",
-    "Receba e devolva onde quiser",
-    "Valor com seguro Premium incluído",
-    "Sem franquia, sem cartão de crédito",
-    "Quilometragem ilimitada",
-    "Condutor adicional gratuito",
-    "Assistência Rodoviária 24/7"
-]
+import Hero from '../../components/home/Hero.astro'
+import Anyrent from '../../components/home/Anyrent.astro'
 ---
 
 <Layout>
     <main class="w-full">
 
-        <!-- Hero -->
-        <div id="hero" class="w-full pb-44 pt-24 bg-cover px-28 text-white bg-center">
+        <Hero />
 
-            <!-- Achieve Rent a Car -->
-            <h2 class="text-3xl font-bold">
-                <span class="text-white" id="achieve">Achieve</span>
-                <span class="text-blue-800">Rent a Car</span>
-            </h2>
+        <Anyrent />
 
-            <!-- Hero Title -->
-            <h1 class="text-7xl font-bold py-4">Aluguer de Carros na<br />Ilha da Madeira</h1>
 
-            <!-- Checklist -->
-            <ul class="flex flex-col gap-2 text-lg font-bold">
-                {list.map((item) => <li class="flex gap-2"><img class="w-6" src={Check.src} alt="Check" />{item}</li>)}
-            </ul>
-
-            <!-- Buttons -->
-            <div class="flex gap-4 py-4">
-                <button id="booknow" class="px-4 py-2 rounded-lg bg-blue-800">Reserve Agora</button>
-                <button class="px-4 py-2 rounded-lg bg-white text-blue-800">Por que nós?</button>
-            </div>
-
-        </div>
-
-        <!-- Anyrent iFrame -->
-        <div class="px-28 pt-12 pb-24 bg-blue-800/10 flex flex-col gap-4">
-
-            <span id="anyrent-scroll" class="relative" style=" top: -6rem;"></span>
-
-            <h2 class="text-5xl font-bold flex items-center justify-center text-center text-blue-800 py-12">
-                Achieve the best.
-                <br />
-                Reserve connosco.
-            </h2>
-
-            <anyrent-iframe data-locale={lang}></anyrent-iframe>
-
-            <script id="jedeyeScript" src="https://reservas.achieverentacar.com/themes/iframe/assets/vendor/anyrent-booking-engine.min.js"></script>
-
-        </div>
-        <div class="h-96"></div>
 
     </main>
 </Layout>
-
-<script>
-
-  const booknow = document.getElementById("booknow");
-  const anyrent = document.getElementById("anyrent-scroll");
-  if(booknow)
-    booknow.addEventListener('click', () => {
-        if(anyrent)
-          anyrent.scrollIntoView({
-            behavior: "smooth"
-          });
-    });
-
-  let system = document.getElementById('anyrentBookingsIframe');
-  if (system) {
-    system.style.borderRadius = "0.375rem"
-  }
-
-
-</script>
-
-<style>
-
-    #hero {
-        background-image: url('/src/assets/hero.webp');
-    }
-
-    @media (min-width: 768px) {
-        #hero {
-            background-image: url('/src/assets/hero.webp');
-        }
-    }
-
-    #achieve {
-        text-shadow:
-            1px 1px 0 #DA291C,
-            -1px 1px 0 #DA291C,
-            -1px -1px 0 #DA291C,
-            1px -1px 0 #DA291C;
-    }
-
-</style>

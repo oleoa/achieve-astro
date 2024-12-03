@@ -1,0 +1,51 @@
+---
+const { lang } = Astro.params;
+---
+
+<div class="px-28 pt-12 pb-24 bg-blue-800/10 flex flex-col gap-4">
+
+    <span id="anyrent-scroll" class="relative" style=" top: -6rem;"></span>
+
+    <h2 class="text-5xl font-bold flex items-center justify-center text-center text-blue-800 py-12">
+        Achieve the best.
+        <br />
+        Reserve connosco.
+    </h2>
+
+    <anyrent-iframe data-locale={lang}></anyrent-iframe>
+    <script id="jedeyeScript" src="https://reservas.achieverentacar.com/themes/iframe/assets/vendor/anyrent-booking-engine.min.js"></script>
+
+</div>
+
+
+<script>
+
+  const booknow = document.getElementById("booknow");
+  const anyrent = document.getElementById("anyrent-scroll");
+  if(booknow)
+    booknow.addEventListener('click', () => {
+        if(anyrent)
+          anyrent.scrollIntoView({
+            behavior: "smooth"
+          });
+    });
+
+  let system = document.getElementById('anyrentBookingsIframe');
+  if (system) {
+    system.style.borderRadius = "0.375rem"
+  }
+
+
+</script>
+
+<style>
+
+    #achieve {
+        text-shadow:
+            1px 1px 0 #DA291C,
+            -1px 1px 0 #DA291C,
+            -1px -1px 0 #DA291C,
+            1px -1px 0 #DA291C;
+    }
+
+</style>
