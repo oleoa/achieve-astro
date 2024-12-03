@@ -1,0 +1,47 @@
+---
+import Logo from "../assets/astro.svg"
+
+const links = [
+  {
+    "src": "/",
+    "name": "Home"
+  },
+  {
+    "src": "/fleet/",
+    "name": "Fleet"
+  },
+  {
+    "src": "/seats/",
+    "name": "Car Seats"
+  },
+  {
+    "src": "/accommodations/",
+    "name": "Accommodations"
+  }
+]
+
+// const flags = [
+//   {
+//     "lang": "pt"
+//   },
+//   {
+//     "lang": "en"
+//   },
+// ]
+---
+
+<nav class="fixed top-0 left-0 w-full h-20 flex items-center justify-between p-4">
+
+    <div id="logo" class="flex items-center">
+        <a href="/">
+            <img src={Logo.src} alt="Achieve Rent a Car logo">
+        </a>
+    </div>
+
+    <div id="links" class="flex items-center gap-4">
+        {links.map((link) =>
+            <a href={link.src}>{link.name}</a>
+        )}
+    </div>
+
+</nav>

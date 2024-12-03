@@ -1,3 +1,7 @@
+---
+import Navbar from '../components/Navbar.astro';
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -8,6 +12,12 @@
 		<title>Achieve Rent a Car</title>
 	</head>
 	<body>
-		<slot />
+
+	   <Navbar />
+
+		<main class="pt-20">
+		  <slot />
+		</main>
+
 	</body>
 </html>
