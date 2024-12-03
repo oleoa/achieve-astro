@@ -6,6 +6,8 @@ import Driver from '../../assets/icons/driver.svg'
 import Roadside from '../../assets/icons/roadside.svg'
 import Mileage from '../../assets/icons/mileage.svg'
 
+const { lang } = Astro.params;
+
 const cards = [
   {
     "icon": "insurance",
@@ -50,20 +52,20 @@ const cards = [
         Because for us <b>you are much more</b> than just a car rental.<br />
         We prioritize <b>your satisfaction</b> and do our best to make you <b>feel welcomed</b> and <b>achieve</b> the goals you desire for your trip.<br />
         We will provide all the information you need to feel <b>safe, well accompanied,</b> and <b>guided</b>.<br />
-        Check out how our customers feel about our services, access our Google Reviews.<br />
+        Check out how our customers feel about our services, access our <a target="_blank" href="https://www.google.com/search?sca_esv=3cf5305f7235dc23&tbm=lcl&sxsrf=ADLYWIIjpL3gnJgjuGz15oNC7DzYxm7K5g:1715971983926&q=Achieve+Rent+a+Car+Reviews&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxK2NDEzM7UwNjQxMDMxMrU0NjMz2MDI-IpRyjE5IzO1LFUhKDWvRCFRwTmxCMgsy0wtL17EikcSAB9GV0BUAAAA&rldimm=9466583140642593660&hl=en-PT&sa=X&ved=2ahUKEwj49a7krZWGAxUzbKQEHX2PCgwQ9fQKegQILRAF#lkt=LocalPoiReviews" class="text-blue">Google Reviews</a>.<br />
     </p>
 
     <!-- Buttons -->
-    <div>
-        <a href="">Book Now</a>
-        <a href="">Contact Us</a>
+    <div class="flex gap-4">
+        <button class="booknow underline text-blue">Book Now</button>
+        <a href={"/"+lang+"/contact"} class="text-blue">Contact Us</a>
     </div>
 
     <!-- Cards -->
     <div class="grid grid-cols-3 gap-4">
 
         {cards.map((feature) =>
-            <div class="border-2 border-black rounded-lg flex flex-col justify-start items-center gap-4 p-4">
+            <div class="border-b-4 border-blue rounded-lg shadow-2xl flex flex-col justify-start items-center gap-4 p-4">
                 {(
                   feature.icon == "insurance")? (
                     <Insurance />

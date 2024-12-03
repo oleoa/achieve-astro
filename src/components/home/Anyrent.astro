@@ -19,15 +19,17 @@ const { lang } = Astro.params;
 
 <script>
 
-  const booknow = document.getElementById("booknow");
+  const booknow = document.getElementsByClassName("booknow");
   const anyrent = document.getElementById("anyrent-scroll");
   if(booknow)
-    booknow.addEventListener('click', () => {
-        if(anyrent)
-          anyrent.scrollIntoView({
-            behavior: "smooth"
-          });
-    });
+    Array.from(booknow).map((button) => {
+      button.addEventListener('click', () => {
+          if(anyrent)
+            anyrent.scrollIntoView({
+              behavior: "smooth"
+            });
+      });
+    })
 
   let system = document.getElementById('anyrentBookingsIframe');
   if (system) {

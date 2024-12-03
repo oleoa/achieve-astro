@@ -5,10 +5,16 @@ import PtFlag from '../assets/flags/pt.jpg'
 import EnFlag from '../assets/flags/en.jpg'
 
 import HomeIcon from '../assets/icons/home.svg'
+import CarIcon from '../assets/icons/car.svg'
+import BabyIcon from '../assets/icons/baby.svg'
+import BedIcon from '../assets/icons/bed.svg'
+import PeopleIcon from '../assets/icons/people.svg'
+import EnvelopeIcon from '../assets/icons/envelope.svg'
 
 const { lang } = Astro.params;
 const langPrefix = "/"+lang+"/";
 const path = Astro.url.pathname.split('/')[2];
+const currentPath = Astro.url.pathname
 
 const links = [
   {
@@ -19,27 +25,27 @@ const links = [
   {
     "src": langPrefix+"fleet",
     "name": (lang=="pt"?"Frota":"Fleet"),
-    "icon": HomeIcon.src
+    "icon": CarIcon.src
   },
   {
     "src": langPrefix+"seats",
     "name": (lang=="pt"?"Cadeiras Auto":"Car Seats"),
-    "icon": HomeIcon.src
+    "icon": BabyIcon.src
   },
   {
     "src": langPrefix+"accommodations",
     "name": (lang=="pt"?"Alojamentos":"Accommodations"),
-    "icon": HomeIcon.src
+    "icon": BedIcon.src
   },
   {
     "src": langPrefix+"about",
     "name": (lang=="pt"?"Sobre nós":"About Us"),
-    "icon": HomeIcon.src
+    "icon": PeopleIcon.src
   },
   {
     "src": langPrefix+"contact",
     "name": (lang=="pt"?"Contate-nos":"Contact Us"),
-    "icon": HomeIcon.src
+    "icon": EnvelopeIcon.src
   }
 ]
 
@@ -57,7 +63,7 @@ const flags = [
 ]
 ---
 
-<nav class="fixed top-0 left-0 w-full h-24 flex items-center justify-between p-8 bg-white text-blue z-50">
+<nav class="fixed top-0 left-0 w-full h-24 flex items-center justify-between py-8 margin bg-white text-blue z-50">
 
     <div id="logo" class="flex items-center">
         <a href={langPrefix}>
@@ -67,9 +73,9 @@ const flags = [
 
     <div class="flex items-center gap-4">
 
-        <div id="links" class="flex items-center gap-4">
+        <div id="links" class="flex items-center gap-6">
             {links.map((link) =>
-                <a href={link.src} class="flex gap-1"><img class="w-4" src={link.icon} alt={link.name+" icon"}>{link.name}</a>
+                <a href={link.src} class={"flex gap-2 "+(currentPath == link.src?"":"no-underline")}><img class="w-4" src={link.icon} alt={link.name+" icon"}>{link.name}</a>
             )}
         </div>
 
