@@ -1,34 +1,36 @@
 ---
 import Logo from "../assets/astro.svg"
-import { getLanguage } from '../utils/global'
+import { getLanguage, getPath } from '../utils/global'
 const lang = getLanguage(Astro.request.url);
+const langPrefix = "/"+lang+"/";
+const path = getPath(Astro.request.url);
 
 const links = [
   {
-    "src": "/"+lang+"/",
+    "src": langPrefix,
     "name": "Home"
   },
   {
-    "src": "/en/fleet/",
+    "src": langPrefix+"fleet",
     "name": "Fleet"
   },
   {
-    "src": "/en/seats/",
+    "src": langPrefix+"seats",
     "name": "Car Seats"
   },
   {
-    "src": "/en/accommodations/",
+    "src": langPrefix+"accommodations",
     "name": "Accommodations"
   }
 ]
 
 const flags = [
   {
-    "src": "/pt/",
+    "src": "/pt/"+path,
     "name": "Pt"
   },
   {
-    "src": "/en/",
+    "src": "/en/"+path,
     "name": "En"
   },
 ]
@@ -43,16 +45,19 @@ const flags = [
     </div>
 
     <div class="flex items-center gap-4">
+
         <div id="links" class="flex items-center gap-4">
             {links.map((link) =>
                 <a href={link.src}>{link.name}</a>
             )}
         </div>
+
         <div id="languages" class="flex items-center gap-4">
             {flags.map((language) =>
                 <a href={language.src} class="border-2 border-black rounded-lg px-2 py-1">{language.name}</a>
             )}
         </div>
+
     </div>
 
 </nav>
