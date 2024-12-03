@@ -10,22 +10,23 @@ export function getStaticPaths () {
   ];
 }
 
-import Layout from '../../layouts/Layout.astro';
+import Layout from '../../layouts/Layout.astro'
 import Languages from "../../assets/translations.json"
 
-const { lang } = Astro.params as Params;
-const page = Languages.pages.home[lang];
+const { lang } = Astro.params as Params
+const page = Languages.pages.home[lang]
 
 import Hero from '../../components/home/Hero.astro'
 import Anyrent from '../../components/home/Anyrent.astro'
+import Swiper from '../../components/home/Swiper.astro'
 ---
 
 <Layout>
     <main class="w-full">
 
         <Hero />
-
         <Anyrent />
+        <Swiper />
 
     </main>
 </Layout>

@@ -1,0 +1,70 @@
+---
+import Card from '../../components/home/swiper/Card.astro'
+
+const customers = [
+  {
+    "name": "Leonardo",
+    "image": "Leonardo",
+    "comment": "Hello",
+  },
+  {
+    "name": "Leonardo",
+    "image": "Leonardo",
+    "comment": "Hello",
+  },
+]
+---
+
+<div class="py-24">
+
+    <!-- Title -->
+    <h2 class="text-5xl font-bold flex items-center justify-center">
+        <a target="_blank" href="https://www.google.com/search?sca_esv=3cf5305f7235dc23&tbm=lcl&sxsrf=ADLYWIIjpL3gnJgjuGz15oNC7DzYxm7K5g:1715971983926&q=Achieve+Rent+a+Car+Reviews&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxK2NDEzM7UwNjQxMDMxMrU0NjMz2MDI-IpRyjE5IzO1LFUhKDWvRCFRwTmxCMgsy0wtL17EikcSAB9GV0BUAAAA&rldimm=9466583140642593660&hl=en-PT&sa=X&ved=2ahUKEwj49a7krZWGAxUzbKQEHX2PCgwQ9fQKegQILRAF#lkt=LocalPoiReviews">
+            What our customers say
+        </a>
+    </h2>
+
+    <!-- Swiper -->
+    <div class="swiper px-4" style="width: 95vw" id="review">
+
+        <div class="swiper-wrapper pt-4">
+
+            {customers.map((review) =>
+              <Card
+                  name={review.name}
+                  image={review.image}
+                  comment={review.comment}
+              />
+            )}
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+import Swiper from 'swiper/bundle';
+import 'swiper/css/bundle';
+
+let isLaptop = window.matchMedia('(min-width: 1024px)').matches;
+let slidesPerView = isLaptop ? 3 : 1;
+const swiper = new Swiper('.swiper', {
+  slidesPerView: slidesPerView,
+  spaceBetween: 30,
+  grabCursor: true,
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+  },
+  autoplay: {
+    delay: 10000,
+    disableOnInteraction: true,
+  },
+});
+
+</script>

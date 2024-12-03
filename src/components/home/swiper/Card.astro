@@ -1,0 +1,21 @@
+---
+import Reviews from '../../../assets/reviews.webp'
+const { name, image, comment } = Astro.props;
+---
+
+<div class="swiper-slide">
+    <div class="flex flex-col justify-start items-center h-full py-4 px-8 pb-8 gap-4 rounded-lg bg-white border-b-4 border-red">
+        <div class="flex w-full gap-8 items-center">
+            <img src={image} alt="Leonardo" class="h-20 w-20">
+            <div class="flex flex-col">
+                <h2 class="font-bold text-xl">{name}</h2>
+                <a href="{{$review['url']}}" target="_blank" class="w-fit">
+                <img src={Reviews.src} alt="Google Reviews" height="64" width="114" class="rounded-md border-red">
+                </a>
+            </div>
+        </div>
+        <p class="font-semibold text-start">
+            {comment}
+        </p>
+    </div>
+</div>
