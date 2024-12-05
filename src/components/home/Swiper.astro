@@ -1,4 +1,6 @@
 ---
+const { translations } = Astro.props
+
 interface Review {
   name?: string,
   comment?: string,
@@ -7,7 +9,7 @@ interface Review {
   image?: string,
 }
 
-import Card from '../../components/home/swiper/Card.astro'
+import Card from './Card.astro'
 
 import { Client } from '@notionhq/client';
 const notionToken = import.meta.env.NOTION_KEY;
@@ -45,7 +47,7 @@ const reviews = reviewsNotion.map((review) => {
     <!-- Title -->
     <h2 class="text-blue text-5xl font-bold flex items-center justify-center">
         <a target="_blank" href="https://www.google.com/search?sca_esv=3cf5305f7235dc23&tbm=lcl&sxsrf=ADLYWIIjpL3gnJgjuGz15oNC7DzYxm7K5g:1715971983926&q=Achieve+Rent+a+Car+Reviews&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxK2NDEzM7UwNjQxMDMxMrU0NjMz2MDI-IpRyjE5IzO1LFUhKDWvRCFRwTmxCMgsy0wtL17EikcSAB9GV0BUAAAA&rldimm=9466583140642593660&hl=en-PT&sa=X&ved=2ahUKEwj49a7krZWGAxUzbKQEHX2PCgwQ9fQKegQILRAF#lkt=LocalPoiReviews">
-            What our customers say
+            {translations.title}
         </a>
     </h2>
 
@@ -80,7 +82,7 @@ import 'swiper/css/bundle';
 
 let isLaptop = window.matchMedia('(min-width: 1024px)').matches;
 let slidesPerView = isLaptop ? 3 : 1;
-const swiper = new Swiper('.swiper', {
+new Swiper('.swiper', {
   slidesPerView: slidesPerView,
   spaceBetween: 30,
   grabCursor: true,

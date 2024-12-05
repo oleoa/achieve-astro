@@ -1,4 +1,5 @@
 ---
+const { translations } = Astro.props
 const { lang } = Astro.params;
 ---
 
@@ -7,13 +8,13 @@ const { lang } = Astro.params;
     <span id="anyrent-scroll" class="relative" style=" top: -6rem;"></span>
 
     <h2 class="text-5xl font-bold flex items-center justify-center text-center text-blue">
-        Achieve the best.
+        Achieve the best
         <br />
-        Reserve connosco.
+        {translations.title}
     </h2>
 
     <anyrent-iframe data-locale={lang}></anyrent-iframe>
-    <script id="jedeyeScript" src="https://reservas.achieverentacar.com/themes/iframe/assets/vendor/anyrent-booking-engine.min.js"></script>
+    <script is:inline id="jedeyeScript" src="https://reservas.achieverentacar.com/themes/iframe/assets/vendor/anyrent-booking-engine.min.js"></script>
 
 </div>
 

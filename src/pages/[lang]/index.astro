@@ -1,34 +1,33 @@
 ---
+import Layout from '../../layouts/Layout.astro'
+import Languages from "../../assets/translations.json"
+import Hero from '../../components/home/Hero.astro'
+import Anyrent from '../../components/home/Anyrent.astro'
+import Swiper from '../../components/home/Swiper.astro'
+import Features from '../../components/home/Features.astro'
+
 interface Params {
-  lang: "en" | "pt";
+  lang: "en" | "pt"
 }
 
 export function getStaticPaths () {
  return [
     {params: {lang: 'en'}},
     {params: {lang: 'pt'}},
-  ];
+  ]
 }
 
-import Layout from '../../layouts/Layout.astro'
-import Languages from "../../assets/translations.json"
-
 const { lang } = Astro.params as Params
-const page = Languages.pages.home[lang]
-
-import Hero from '../../components/home/Hero.astro'
-import Anyrent from '../../components/home/Anyrent.astro'
-import Swiper from '../../components/home/Swiper.astro'
-import Features from '../../components/home/Features.astro'
+const translations = Languages.pages.home[lang]
 ---
 
 <Layout>
     <main class="w-full">
 
-        <Hero />
-        <Anyrent />
-        <Swiper />
-        <Features />
+        <Hero translations={translations.hero} />
+        <Anyrent translations={translations.anyrent} />
+        <Swiper translations={translations.swiper} />
+        <Features translations={translations.features} />
 
     </main>
 </Layout>

@@ -1,32 +1,84 @@
 {
   "pages": {
-
     "home": {
       "en": {
-        "title": "Home"
+        "hero": {
+          "title_p1": "Rent a Car on",
+          "title_p2": "Madeira Island",
+          "checklist_p1": "5 stars rated service",
+          "checklist_p2": "Pick up and drop off anywhere you like",
+          "checklist_p3": "Premium Insurance included",
+          "checklist_p4": "No excess, no credit card needed",
+          "checklist_p5": "Unlimited mileage",
+          "checklist_p6": "Free additional driver",
+          "checklist_p7": "24/7 Roadside Assistance",
+          "button_1": "Book Now",
+          "button_2": "Check our reviews"
+        },
+        "anyrent": {
+          "title": "Book with us"
+        },
+        "swiper": {
+          "title": "What our customers say"
+        },
+        "features": {
+          "title": "Why choose Achieve Rent a Car",
+          "paragraph_l1": "Because for us you are much more than just a car rental.",
+          "paragraph_l2": "We prioritize your satisfaction and do our best to make you feel welcomed and achieve the goals you desire for your trip.",
+          "paragraph_l3": "We will provide all the information you need to feel safe, well accompanied, and guided.",
+          "paragraph_l4": "Check out how our customers feel about our services, access our ",
+          "button_1": "Book Now",
+          "button_2": "Contact Us"
+        }
       },
       "pt": {
-        "title": "Início"
+        "hero": {
+          "title_p1": "Aluguer de Carros na",
+          "title_p2": "Ilha da Madeira",
+          "checklist_p1": "Atendimento avaliado em 5 estrelas",
+          "checklist_p2": "Receba e devolva onde quiser",
+          "checklist_p3": "Valor com seguro Premium incluído",
+          "checklist_p4": "Sem franquia, sem cartão de crédito",
+          "checklist_p5": "Quilometragem ilimitada",
+          "checklist_p6": "Condutor adicional gratuito",
+          "checklist_p7": "Assistência Rodoviária 24/7",
+          "button_1": "Reserve Agora",
+          "button_2": "Veja nossas reviews"
+        },
+        "anyrent": {
+          "title": "Reserve connosco"
+        },
+        "swiper": {
+          "title": "O que dizem os nossos clientes"
+        },
+        "features": {
+          "title": "Porque escolher a Achieve Rent a Car",
+          "paragraph_l1": "Porque para nós você é muito mais do apenas um aluguer de carro.",
+          "paragraph_l2": "Priorizamos a sua satisfação e fazemos o nosso melhor para que você sinta-se acolhido e alcance os objetivos que deseja para a sua viagem.",
+          "paragraph_l3": "Enviaremos todas as informações de que precisa para sentir-se seguro, bem acompanhado e orientado.",
+          "paragraph_l4": "Confira como os nossos clientes sentem-se em relação aos nossos serviços, aceda ao nosso ",
+          "button_1": "Reserve Agora",
+          "button_2": "Contate-nos"
+        }
       }
     },
 
     "seats": {
       "en": {
-          "title": "Car Seats"
-        },
-        "pt": {
-          "title": "Cadeiras Auto"
-        }
+        "title": "Car Seats"
+      },
+      "pt": {
+        "title": "Cadeiras Auto"
+      }
     },
 
     "fleet": {
       "en": {
-          "title": "Fleet"
-        },
-        "pt": {
-          "title": "Frota"
-        }
+        "title": "Fleet"
+      },
+      "pt": {
+        "title": "Frota"
+      }
     }
-
   }
 }

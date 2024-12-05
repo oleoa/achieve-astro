@@ -1,14 +1,10 @@
 ---
+const { translations } = Astro.props
+
 import Check from '../../assets/icons/check.svg'
-const list = [
-    "Atendimento avaliado em 5 estrelas",
-    "Receba e devolva onde quiser",
-    "Valor com seguro Premium incluído",
-    "Sem franquia, sem cartão de crédito",
-    "Quilometragem ilimitada",
-    "Condutor adicional gratuito",
-    "Assistência Rodoviária 24/7"
-]
+const list = [1,2,3,4,5,6,7].map((i) => {
+  return translations["checklist_p"+i]
+})
 ---
 
 <div id="hero" class="w-full pb-44 pt-24 bg-cover margin text-white bg-center">
@@ -20,7 +16,7 @@ const list = [
     </h2>
 
     <!-- Hero Title -->
-    <h1 class="text-7xl font-bold py-4">Aluguer de Carros na<br />Ilha da Madeira</h1>
+    <h1 class="text-7xl font-bold py-4">{translations.title_p1}<br />{translations.title_p2}</h1>
 
     <!-- Checklist -->
     <ul class="flex flex-col gap-2 text-lg font-bold">
@@ -29,8 +25,8 @@ const list = [
 
     <!-- Buttons -->
     <div class="flex gap-4 py-4">
-        <button class="booknow px-4 py-2 rounded-lg bg-blue">Reserve Agora</button>
-        <button id="checkreviews" class="px-4 py-2 rounded-lg bg-white text-blue">Veja nossas reviews</button>
+        <button class="booknow px-4 py-2 rounded-lg bg-blue">{translations.button_1}</button>
+        <button id="checkreviews" class="px-4 py-2 rounded-lg bg-white text-blue">{translations.button_2}</button>
     </div>
 
 </div>

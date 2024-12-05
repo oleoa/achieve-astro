@@ -1,4 +1,30 @@
 ---
+interface Params {
+  lang: "en" | "pt"
+}
+
+interface Props {
+  translations: {
+    title: string,
+    paragraph_l1: string,
+    paragraph_l2: string,
+    paragraph_l3: string,
+    paragraph_l4: string,
+    button_1: string,
+    button_2: string
+  }
+}
+
+export function getStaticPaths () {
+ return [
+    {params: {lang: 'en'}},
+    {params: {lang: 'pt'}},
+  ]
+}
+
+const { translations } = Astro.props
+const { lang } = Astro.params as Params;
+
 import Insurance from '../icons/Insurance.astro'
 import Anywhere from '../../assets/icons/anywhere.svg'
 import Card from '../icons/Card.astro'
@@ -6,38 +32,72 @@ import Driver from '../../assets/icons/driver.svg'
 import Roadside from '../../assets/icons/roadside.svg'
 import Mileage from '../../assets/icons/mileage.svg'
 
-const { lang } = Astro.params;
-
 const cards = [
   {
     "icon": "insurance",
-    "title": "Premium Insurance included",
-    "description": "Tranquility is essential when you travel. Premium Insurance has a deductible waiver and the coverage you need to protect yourself from unexpected mishaps.",
+    "title": {
+      "en": "Premium Insurance included",
+      "pt": "Seguro Premium incluído"
+    },
+    "description": {
+        "en": "Tranquility is essential when you travel. Premium Insurance has a deductible waiver and the coverage you need to protect yourself from unexpected mishaps.",
+        "pt": "A tranquilidade é fundamental quando você viaja. O Seguro Premium possui isenção de franquia e a abrangência que você precisa para proteger-se de contratempos inesperados."
+    }
   },
   {
     "icon": Anywhere.src,
-    "title": "Receive and return anywhere",
-    "description": "Whether at the airport door or your hotel, receive and return wherever you prefer. No queues, no waiting, and no long walks.",
+    "title": {
+      "en": "Receive and return anywhere",
+      "pt": "Receba e devolva onde estiver"
+    },
+    "description": {
+        "en": "Whether at the airport door or your hotel, receive and return wherever you prefer. No queues, no waiting, and no long walks.",
+        "pt": "Seja à porta do aeroporto ou do seu hotel, receba e devolva onde preferir. Sem filas, sem esperas e sem longas caminhadas."
+    }
   },
   {
     "icon": "card",
-    "title": "No credit card required",
-    "description": "We believe in hassle-free rentals. We do not require a deposit, and we do not block your credit card.",
+    "title": {
+      "en": "No credit card required",
+      "pt": "Sem cartão de crédito"
+    },
+    "description": {
+        "en": "We believe in hassle-free rentals. We do not require a deposit, and we do not block your credit card.",
+        "pt": "Acreditamos em alugueres sem complicações. Não exigimos caução e não bloqueamos o seu cartão de crédito."
+    }
   },
   {
     "icon": Driver.src,
-    "title": "Free additional driver",
-    "description": "Enjoy the freedom of free additional drivers. It's our way of ensuring that everyone experiences the trip together, at no extra cost.",
+    "title": {
+      "en": "Free additional driver",
+      "pt": "Condutor adicional gratuito"
+    },
+    "description": {
+        "en": "Enjoy the freedom of free additional drivers. It's our way of ensuring that everyone experiences the trip together, at no extra cost.",
+        "pt": "Aproveite a liberdade de condutores adicionais gratuitos. É a nossa maneira de garantir que todos vivam a viagem juntos, sem nenhum custo extra."
+    }
   },
   {
     "icon": Roadside.src,
-    "title": "Roadside assistance",
-    "description": "Throughout your stay, you can count on our 24/7 roadside assistance. We are here to help you with whatever you need.",
+    "title": {
+      "en": "Roadside assistance",
+      "pt": "Assistência em viagem"
+    },
+    "description": {
+        "en": "Throughout your stay, you can count on our 24/7 roadside assistance. We are here to help you with whatever you need.",
+        "pt": "Durante toda a sua estadia, pode contar com a nossa assistência em viagem 24/7. Estamos aqui para o ajudar no que for preciso."
+    }
   },
   {
     "icon": Mileage.src,
-    "title": "Unlimited mileage",
-    "description": "Explore Madeira without limits, go wherever you want with total freedom, without worrying about additional costs.",
+    "title": {
+      "en": "Unlimited mileage",
+      "pt": "Quilometragem ilimitada"
+    },
+    "description": {
+        "en": "Explore Madeira without limits, go wherever you want with total freedom, without worrying about additional costs.",
+        "pt": "Explore a Madeira sem limites, vá aonde quiser com libertade total, sem preocupações com custos adicionais."
+    }
   },
 ]
 ---
@@ -45,20 +105,23 @@ const cards = [
 <div id="why_us" class="w-full margin py-24 gap-12 flex flex-col">
 
     <!-- Title -->
-    <h2 class="text-5xl font-bold">Why Choose Achieve Rent a Car</h2>
+    <h2 class="text-5xl font-bold">{translations.title}</h2>
 
     <!-- Description -->
-    <p class="pr-80">
-        Because for us <b>you are much more</b> than just a car rental.<br />
-        We prioritize <b>your satisfaction</b> and do our best to make you <b>feel welcomed</b> and <b>achieve</b> the goals you desire for your trip.<br />
-        We will provide all the information you need to feel <b>safe, well accompanied,</b> and <b>guided</b>.<br />
-        Check out how our customers feel about our services, access our <a target="_blank" href="https://www.google.com/search?sca_esv=3cf5305f7235dc23&tbm=lcl&sxsrf=ADLYWIIjpL3gnJgjuGz15oNC7DzYxm7K5g:1715971983926&q=Achieve+Rent+a+Car+Reviews&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxK2NDEzM7UwNjQxMDMxMrU0NjMz2MDI-IpRyjE5IzO1LFUhKDWvRCFRwTmxCMgsy0wtL17EikcSAB9GV0BUAAAA&rldimm=9466583140642593660&hl=en-PT&sa=X&ved=2ahUKEwj49a7krZWGAxUzbKQEHX2PCgwQ9fQKegQILRAF#lkt=LocalPoiReviews" class="text-blue">Google Reviews</a>.<br />
+    <p>
+        {translations.paragraph_l1}<br />
+        {translations.paragraph_l2}<br />
+        {translations.paragraph_l3}<br />
+        {translations.paragraph_l4}
+        <a target="_blank" href="https://www.google.com/search?sca_esv=3cf5305f7235dc23&tbm=lcl&sxsrf=ADLYWIIjpL3gnJgjuGz15oNC7DzYxm7K5g:1715971983926&q=Achieve+Rent+a+Car+Reviews&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxK2NDEzM7UwNjQxMDMxMrU0NjMz2MDI-IpRyjE5IzO1LFUhKDWvRCFRwTmxCMgsy0wtL17EikcSAB9GV0BUAAAA&rldimm=9466583140642593660&hl=en-PT&sa=X&ved=2ahUKEwj49a7krZWGAxUzbKQEHX2PCgwQ9fQKegQILRAF#lkt=LocalPoiReviews" class="text-blue">
+            Google Reviews.
+        </a>
     </p>
 
     <!-- Buttons -->
     <div class="flex gap-4">
-        <button class="booknow underline text-blue">Book Now</button>
-        <a href={"/"+lang+"/contact"} class="text-blue">Contact Us</a>
+        <button class="booknow underline text-blue">{translations.button_1}</button>
+        <a href={"/"+lang+"/contact"} class="text-blue">{translations.button_2}</a>
     </div>
 
     <!-- Cards -->
@@ -75,8 +138,8 @@ const cards = [
                   ):(
                     <img src={feature.icon} alt={feature.title+" icon"} class="w-12 h-12">
                 )}
-                <h3 class="text-2xl">{feature.title}</h3>
-                <p class="text-center">{feature.description}</p>
+                <h3 class="text-2xl">{feature.title[lang]}</h3>
+                <p class="text-center">{feature.description[lang]}</p>
             </div>
         )}
 
