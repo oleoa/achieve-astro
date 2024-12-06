@@ -1,0 +1,82 @@
+---
+import HomeIcon from '../assets/icons/home.svg'
+import CarIcon from '../assets/icons/car.svg'
+import BabyIcon from '../assets/icons/baby.svg'
+import BedIcon from '../assets/icons/bed.svg'
+import PeopleIcon from '../assets/icons/people.svg'
+import EnvelopeIcon from '../assets/icons/envelope.svg'
+
+import PtFlag from '../assets/flags/pt.jpg'
+import EnFlag from '../assets/flags/en.jpg'
+
+const { lang } = Astro.params
+const langPrefix = "/"+lang+"/"
+const path = Astro.url.pathname.split('/')[2]
+const currentPath = Astro.url.pathname
+
+const links = [
+  {
+    "src": langPrefix,
+    "name": (lang=="pt"?"Início":"Home"),
+    "icon": HomeIcon.src
+  },
+  {
+    "src": langPrefix+"fleet",
+    "name": (lang=="pt"?"Frota":"Fleet"),
+    "icon": CarIcon.src
+  },
+  {
+    "src": langPrefix+"seats",
+    "name": (lang=="pt"?"Cadeiras Auto":"Car Seats"),
+    "icon": BabyIcon.src
+  },
+  {
+    "src": langPrefix+"accommodations",
+    "name": (lang=="pt"?"Alojamentos":"Accommodations"),
+    "icon": BedIcon.src
+  },
+  {
+    "src": langPrefix+"about",
+    "name": (lang=="pt"?"Sobre nós":"About Us"),
+    "icon": PeopleIcon.src
+  },
+  {
+    "src": langPrefix+"contact",
+    "name": (lang=="pt"?"Contate-nos":"Contact Us"),
+    "icon": EnvelopeIcon.src
+  }
+]
+
+const flags = [
+  {
+    "src": "/pt/"+path,
+    "image": PtFlag.src,
+    "name": "Portuguese Flag"
+  },
+  {
+    "src": "/en/"+path,
+    "image": EnFlag.src,
+    "name": "English Flag"
+  },
+]
+
+const { on } = Astro.props
+---
+
+<div class={"flex items-start gap-4 text-blue "+(on=="navbar"?"flex-row xl:flex hidden":"flex-col")}>
+
+    <div id="links" class={"flex items-start gap-6 "+(on=="navbar"?"flex-row":"flex-col")}}>
+        {links.map((link) =>
+            <a href={link.src} class={"flex gap-2 "+(currentPath == link.src?"":"no-underline")}><img class="w-4" src={link.icon} alt={link.name+" icon"}>{link.name}</a>
+        )}
+    </div>
+
+    <div id="languages" class={"flex items-center gap-4"}>
+        {flags.map((language) =>
+            <a href={language.src}>
+                <img src={language.image} alt={language.name} class="rounded">
+            </a>
+        )}
+    </div>
+
+</div>

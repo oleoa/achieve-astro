@@ -1,0 +1,25 @@
+---
+import Navigation from "./Navigation.astro";
+---
+
+<div id="sidebar" class="fixed top-0 right-0 z-50 w-64 h-screen bg-white py-8 px-12 transition-transform duration-300 translate-x-full">
+    <Navigation on="sidebar"/>
+</div>
+
+<div id="sidebar_exit" class="fixed w-screen h-screen h-50 top-0 left-0 z-30 hidden">
+</div>
+
+<script>
+
+  const sidebarExit = document.getElementById("sidebar_exit")
+  const sidebar = document.getElementById('sidebar')
+
+  if(sidebarExit)
+    sidebarExit.addEventListener('click', () => {
+        if(sidebar)
+          sidebar.classList.toggle('translate-x-full')
+        if(sidebarExit)
+          sidebarExit.classList.toggle('hidden')
+    });
+
+</script>

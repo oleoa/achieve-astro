@@ -1,92 +1,45 @@
 ---
 import Logo from "../assets/achieve.webp"
-
-import PtFlag from '../assets/flags/pt.jpg'
-import EnFlag from '../assets/flags/en.jpg'
-
-import HomeIcon from '../assets/icons/home.svg'
-import CarIcon from '../assets/icons/car.svg'
-import BabyIcon from '../assets/icons/baby.svg'
-import BedIcon from '../assets/icons/bed.svg'
-import PeopleIcon from '../assets/icons/people.svg'
-import EnvelopeIcon from '../assets/icons/envelope.svg'
+import SidebarButton from '../assets/icons/sidebar.svg'
+import Navigation from "./Navigation.astro";
 
 const { lang } = Astro.params;
 const langPrefix = "/"+lang+"/";
-const path = Astro.url.pathname.split('/')[2];
-const currentPath = Astro.url.pathname
 
-const links = [
-  {
-    "src": langPrefix,
-    "name": (lang=="pt"?"Início":"Home"),
-    "icon": HomeIcon.src
-  },
-  {
-    "src": langPrefix+"fleet",
-    "name": (lang=="pt"?"Frota":"Fleet"),
-    "icon": CarIcon.src
-  },
-  {
-    "src": langPrefix+"seats",
-    "name": (lang=="pt"?"Cadeiras Auto":"Car Seats"),
-    "icon": BabyIcon.src
-  },
-  {
-    "src": langPrefix+"accommodations",
-    "name": (lang=="pt"?"Alojamentos":"Accommodations"),
-    "icon": BedIcon.src
-  },
-  {
-    "src": langPrefix+"about",
-    "name": (lang=="pt"?"Sobre nós":"About Us"),
-    "icon": PeopleIcon.src
-  },
-  {
-    "src": langPrefix+"contact",
-    "name": (lang=="pt"?"Contate-nos":"Contact Us"),
-    "icon": EnvelopeIcon.src
-  }
-]
-
-const flags = [
-  {
-    "src": "/pt/"+path,
-    "image": PtFlag.src,
-    "name": "Portuguese Flag"
-  },
-  {
-    "src": "/en/"+path,
-    "image": EnFlag.src,
-    "name": "English Flag"
-  },
-]
 ---
 
-<nav class="fixed top-0 left-0 w-full h-24 flex items-center justify-between py-8 margin bg-white text-blue z-50">
+<nav class="fixed top-0 left-0 w-full h-24 flex items-center justify-between py-8 margin bg-white z-40">
 
     <div id="logo" class="flex items-center">
         <a href={langPrefix}>
-            <img src={Logo.src} alt="Achieve Rent a Car logo">
+            <img src={Logo.src} alt="Achieve Rent a Car logo" />
         </a>
     </div>
 
-    <div class="flex items-center gap-4">
+    <Navigation on="navbar" class="xl:flex hidden" />
 
-        <div id="links" class="flex items-center gap-6">
-            {links.map((link) =>
-                <a href={link.src} class={"flex gap-2 "+(currentPath == link.src?"":"no-underline")}><img class="w-4" src={link.icon} alt={link.name+" icon"}>{link.name}</a>
-            )}
-        </div>
+    <div id="sidebar_button_holder" class="h-24 flex items-center justify-center xl:hidden">
 
-        <div id="languages" class="flex items-center gap-4">
-            {flags.map((language) =>
-                <a href={language.src}>
-                    <img src={language.image} alt={language.name} class="rounded">
-                </a>
-            )}
-        </div>
+        <button id="sidebar_button">
+            <img src={SidebarButton.src} class="w-6" alt="Click here to open the sidebar" />
+        </button>
 
     </div>
 
 </nav>
+
+<script>
+
+  const sidebar = document.getElementById('sidebar')
+  const sidebarExit = document.getElementById('sidebar_exit')
+  const sidebarButton = document.getElementById('sidebar_button')
+
+  if(sidebarButton)
+    sidebarButton.addEventListener('click', () => {
+        if(sidebar)
+          sidebar.classList.toggle('translate-x-full')
+        if(sidebarExit)
+          sidebarExit.classList.toggle('hidden')
+    });
+
+</script>
