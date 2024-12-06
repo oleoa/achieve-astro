@@ -3,11 +3,11 @@ const { translations } = Astro.props
 const { lang } = Astro.params;
 ---
 
-<div class="margin bg-blue/10 flex flex-col justify-start gap-24 pb-24">
+<div class="margin bg-blue/10 flex flex-col justify-start gap-12 xl:gap-24 pb-12 xl:pb-24">
 
-    <span id="anyrent-scroll" class="relative" style=" top: -6rem;"></span>
+    <span id="anyrent-scroll" class="relative" style="top: -6rem;"></span>
 
-    <h2 class="text-5xl font-bold flex items-center justify-center text-center text-blue">
+    <h2 class="text-4xl xl:text-5xl font-bold flex items-center justify-center text-center text-blue">
         Achieve the best
         <br />
         {translations.title}

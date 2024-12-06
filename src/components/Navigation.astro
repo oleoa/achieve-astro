@@ -11,7 +11,7 @@ import EnFlag from '../assets/flags/en.jpg'
 
 const { lang } = Astro.params
 const langPrefix = "/"+lang+"/"
-const path = Astro.url.pathname.split('/')[2]
+const path = Astro.url.pathname.split('/')[2] || "";
 const currentPath = Astro.url.pathname
 
 const links = [
@@ -63,7 +63,7 @@ const flags = [
 const { on } = Astro.props
 ---
 
-<div class={"flex items-start gap-4 text-blue "+(on=="navbar"?"flex-row xl:flex hidden":"flex-col")}>
+<div class={"flex items-start gap-6 text-blue "+(on=="navbar"?"flex-row xl:flex hidden":"flex-col")}>
 
     <div id="links" class={"flex items-start gap-6 "+(on=="navbar"?"flex-row":"flex-col")}}>
         {links.map((link) =>

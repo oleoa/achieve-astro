@@ -25,7 +25,14 @@ const { lang } = Astro.params;
     	<style is:global>
 
             a { @apply underline }
-    	   .margin { @apply xl:px-28 px-6 }
+    	    .margin { @apply px-6 md:px-20 }
+            #achieve {
+                text-shadow:
+                    1px 1px 0 #DA291C,
+                    -1px 1px 0 #DA291C,
+                    -1px -1px 0 #DA291C,
+                    1px -1px 0 #DA291C;
+            }
 
     	</style>
 
