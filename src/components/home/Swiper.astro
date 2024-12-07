@@ -13,7 +13,7 @@ import Card from './Card.astro'
 
 import { Client } from '@notionhq/client';
 const notionToken = import.meta.env.NOTION_KEY;
-const notionDatabaseId = import.meta.env.NOTION_PAGE_ID;
+const notionDatabaseId = import.meta.env.NOTION_PAGE_ID_REVIEWS;
 const notion = new Client({ auth: notionToken });
 const response = await notion.databases.query({ database_id: notionDatabaseId });
 const reviewsNotion = response.results;

@@ -2,26 +2,32 @@
 import Logo from "../assets/achieve.webp"
 import SidebarButton from '../assets/icons/sidebar.svg'
 import Navigation from "./Navigation.astro";
-
+import Ads from './Ads.astro';
 const { lang } = Astro.params;
 const langPrefix = "/"+lang+"/";
 ---
 
-<nav class="fixed top-0 left-0 w-full h-24 flex items-center justify-between py-8 margin bg-white z-40">
+<nav id="navbar" class="fixed top-0 left-0 w-full min-h-24 bg-white z-40 flex flex-col">
 
-    <div id="logo" class="flex items-center">
-        <a href={langPrefix}>
-            <img src={Logo.src} alt="Achieve Rent a Car logo" />
-        </a>
-    </div>
+    <Ads />
 
-    <Navigation on="navbar" class="xl:flex hidden" />
+    <div class="flex items-center justify-between py-8 margin">
 
-    <div id="sidebar_button_holder" class="h-24 flex items-center justify-center xl:hidden">
+        <div id="logo" class="flex items-center">
+            <a href={langPrefix}>
+                <img src={Logo.src} alt="Achieve Rent a Car logo" />
+            </a>
+        </div>
 
-        <button id="sidebar_button">
-            <img src={SidebarButton.src} class="w-6" alt="Click here to open the sidebar" />
-        </button>
+        <Navigation on="navbar" class="xl:flex hidden" />
+
+        <div id="sidebar_button_holder" class="h-24 flex items-center justify-center xl:hidden">
+
+            <button id="sidebar_button">
+                <img src={SidebarButton.src} class="w-6" alt="Click here to open the sidebar" />
+            </button>
+
+        </div>
 
     </div>
 

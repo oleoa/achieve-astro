@@ -1,6 +1,6 @@
 ---
-import Navbar from '../components/Navbar.astro';
 import Sidebar from '../components/Sidebar.astro';
+import Navbar from '../components/Navbar.astro';
 const { lang } = Astro.params;
 ---
 
@@ -18,8 +18,8 @@ const { lang } = Astro.params;
 	   <Sidebar />
 	   <Navbar />
 
-		<main class="pt-24 min-h-screen">
-		  <slot />
+		<main class="pt-36 pt-24 min-h-screen">
+		    <slot />
 		</main>
 
     	<style is:global>
