@@ -1,21 +1,13 @@
 ---
 const { translations } = Astro.props
-
-interface Review {
-  name?: string,
-  comment?: string,
-  comentario?: string,
-  url?: string,
-  image?: string,
-}
-
 import Card from './Card.astro'
 import Reviews from '../../assets/reviews.json'
+import Ad from '../../assets/ad.json'
 ---
 
 <div class="bg-blue/15 flex flex-col gap-12 xl:gap-24 pb-12 xl:pb-24">
 
-    <span id="reviews-scroll" class="relative" style=" top: -6rem;"></span>
+    <span id="reviews-scroll" class="relative" style={(Ad.is_active?"top: -10rem;":"top: -6rem;")}></span>
 
     <!-- Title -->
     <h2 class="text-blue text-center text-4xl xl:text-5xl font-bold flex items-center justify-center margin">

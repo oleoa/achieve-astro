@@ -7,11 +7,11 @@ const { lang } = Astro.params;
 const langPrefix = "/"+lang+"/";
 ---
 
-<nav id="navbar" class="fixed top-0 left-0 w-full min-h-24 bg-white z-40 flex flex-col">
+<nav id="navbar" class="fixed top-0 left-0 w-full bg-white z-40 flex flex-col">
 
     <Ads />
 
-    <div class="flex items-center justify-between py-8 margin">
+    <div class="flex items-center justify-between py-8 margin h-24">
 
         <div id="logo" class="flex items-center">
             <a href={langPrefix}>
