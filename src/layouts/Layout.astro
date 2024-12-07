@@ -2,6 +2,54 @@
 import Sidebar from '../components/Sidebar.astro';
 import Navbar from '../components/Navbar.astro';
 const { lang } = Astro.params;
+
+interface Ad {
+  text?: string,
+  texto?: string,
+  text_mobile?: string,
+  texto_mobile?: string,
+  background_color?: string,
+  text_color?: string,
+  active? :boolean,
+}
+
+import { Client } from '@notionhq/client';
+const notionToken = import.meta.env.NOTION_KEY;
+const notionDatabaseId = import.meta.env.NOTION_PAGE_ID_ADS;
+const notion = new Client({ auth: notionToken });
+const response = await notion.databases.query({ database_id: notionDatabaseId });
+const reviewsNotion = response.results;
+const ads = reviewsNotion.map((ad) => {
+
+  const adUpdated: Ad = {};
+
+  if('properties' in ad && 'rich_text' in ad.properties.Text && Array.isArray(ad.properties.Text.rich_text))
+    adUpdated.text = ad.properties.Text.rich_text[0].plain_text;
+
+  if('properties' in ad && 'rich_text' in ad.properties.Texto && Array.isArray(ad.properties.Texto.rich_text))
+    adUpdated.texto = ad.properties.Texto.rich_text[0].plain_text;
+
+  if('properties' in ad && 'rich_text' in ad.properties["Text Mobile"] && Array.isArray(ad.properties["Text Mobile"].rich_text))
+    adUpdated.text_mobile = ad.properties["Text Mobile"].rich_text[0].plain_text;
+
+  if('properties' in ad && 'rich_text' in ad.properties["Texto Mobile"] && Array.isArray(ad.properties["Texto Mobile"].rich_text))
+    adUpdated.texto_mobile = ad.properties["Texto Mobile"].rich_text[0].plain_text;
+
+  if('properties' in ad && 'rich_text' in ad.properties["Background Color"] && Array.isArray(ad.properties["Background Color"].rich_text))
+    adUpdated.background_color = ad.properties["Background Color"].rich_text[0].plain_text;
+
+  if('properties' in ad && 'rich_text' in ad.properties["Text Color"] && Array.isArray(ad.properties["Text Color"].rich_text))
+    adUpdated.text_color = ad.properties["Text Color"].rich_text[0].plain_text;
+
+  if('properties' in ad && 'checkbox' in ad.properties.Active && ad.properties.Active.checkbox)
+    adUpdated.active = ad.properties.Active.checkbox?true:false;
+
+  return adUpdated;
+
+})
+const anyAds = ads.filter((ad) => {
+  return ad.active
+})
 ---
 
 <!doctype html>
@@ -16,9 +64,9 @@ const { lang } = Astro.params;
 	<body class="min-h-screen">
 
 	   <Sidebar />
-	   <Navbar />
+	   <Navbar ads={ads} />
 
-		<main class="pt-36 pt-24 min-h-screen">
+		<main class={"min-h-screen "+(anyAds.length?"pt-36":"pt-24")}>
 		    <slot />
 		</main>
 

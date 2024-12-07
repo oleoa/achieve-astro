@@ -4,12 +4,13 @@ import SidebarButton from '../assets/icons/sidebar.svg'
 import Navigation from "./Navigation.astro";
 import Ads from './Ads.astro';
 const { lang } = Astro.params;
+const { ads } = Astro.props;
 const langPrefix = "/"+lang+"/";
 ---
 
 <nav id="navbar" class="fixed top-0 left-0 w-full min-h-24 bg-white z-40 flex flex-col">
 
-    <Ads />
+    <Ads ads={ads} />
 
     <div class="flex items-center justify-between py-8 margin">
 
