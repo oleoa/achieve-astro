@@ -10,34 +10,7 @@ interface Review {
 }
 
 import Card from './Card.astro'
-
-import { Client } from '@notionhq/client';
-const notionToken = import.meta.env.NOTION_KEY;
-const notionDatabaseId = import.meta.env.NOTION_PAGE_ID_REVIEWS;
-const notion = new Client({ auth: notionToken });
-const response = await notion.databases.query({ database_id: notionDatabaseId });
-const reviewsNotion = response.results;
-const reviews = reviewsNotion.map((review) => {
-
-  const reviewUpdated: Review = {};
-
-  if('properties' in review && 'title' in review.properties.Name && Array.isArray(review.properties.Name.title))
-    reviewUpdated.name = review.properties.Name.title[0].plain_text;
-
-  if('properties' in review && 'url' in review.properties.Url && typeof review.properties.Url.url == "string")
-    reviewUpdated.url = review.properties.Url.url;
-
-  if('properties' in review && 'url' in review.properties.Image && typeof review.properties.Image.url == "string")
-    reviewUpdated.image = review.properties.Image.url;
-
-  if('properties' in review && 'rich_text' in review.properties.Comment && Array.isArray(review.properties.Comment.rich_text))
-    reviewUpdated.comment = review.properties.Comment.rich_text[0].plain_text;
-
-  if('properties' in review && 'rich_text' in review.properties.Comentario && Array.isArray(review.properties.Comentario.rich_text))
-    reviewUpdated.comentario = review.properties.Comentario.rich_text[0].plain_text;
-
-  return reviewUpdated;
-})
+import Reviews from '../../assets/reviews.json'
 ---
 
 <div class="bg-blue/15 flex flex-col gap-12 xl:gap-24 pb-12 xl:pb-24">
@@ -56,7 +29,7 @@ const reviews = reviewsNotion.map((review) => {
 
         <div class="swiper-wrapper pt-4">
 
-            {reviews.map((review) =>
+            {Reviews.map((review) =>
               <Card
                   name={review.name}
                   url={review.url}

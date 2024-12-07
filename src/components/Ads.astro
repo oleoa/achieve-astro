@@ -1,27 +1,23 @@
 ---
-const { lang } = Astro.params;
-const { ads } = Astro.props;
+const { lang } = Astro.params
+import Ad from '../assets/ad.json'
 ---
 
-{ads && Array.isArray(ads) && (
-    ads.map((ad) =>
-        (ad && ad.active && (
-          <div class="text-xs md:text-xl py-3 md:px-64 px-4 flex justify-center items-center font-semibold" style={"background-color: #"+ad.background_color+"; color: #"+ad.text_color+";"}>
-              <p class="w-full h-full text-center md:block hidden">
-                  {lang=="en"?(
-                    ad.text
-                  ):(
-                    ad.texto
-                  )}
-              </p>
-              <p class="w-full h-full text-start md:hidden block text-base">
-                  {lang=="en"?(
-                    ad.text_mobile
-                  ):(
-                    ad.texto_mobile
-                  )}
-              </p>
-          </div>
-        ))
-    )
+{Ad.is_active && (
+    <div class="text-xs md:text-xl py-3 md:px-64 px-4 flex justify-center items-center font-semibold" style={"background-color: "+Ad.background_color+"; color: "+Ad.text_color+";"}>
+        <p class="w-full h-full text-center md:block hidden">
+            {lang=="en"?(
+              Ad.text
+            ):(
+              Ad.texto
+            )}
+        </p>
+        <p class="w-full h-full text-start md:hidden block text-base">
+            {lang=="en"?(
+              Ad.text_mobile
+            ):(
+              Ad.texto_mobile
+            )}
+        </p>
+    </div>
 )}
