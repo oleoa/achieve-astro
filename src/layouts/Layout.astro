@@ -1,4 +1,6 @@
 ---
+import Cookie from '../components/head/Cookie.astro'
+
 const { page, lang } = Astro.props
 import Ad from '../assets/ad.json'
 import Navbar from '../components/Navbar.astro'
@@ -11,11 +13,16 @@ import { toTitleCase } from '../assets/functions.ts'
 <html lang={lang}>
 
 	<head>
+	    <Cookie />
+
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
 		<title>{toTitleCase(page)} - Achieve Rent a Car</title>
+
 	</head>
 
 	<body class="min-h-screen">
