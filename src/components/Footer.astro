@@ -1,23 +1,37 @@
 ---
+import Languages from "../assets/translations.json"
 
+interface Params {
+  lang: "en" | "pt"
+}
+
+export function getStaticPaths () {
+ return [
+    {params: {lang: 'en'}},
+    {params: {lang: 'pt'}},
+  ]
+}
+
+const { lang } = Astro.params as Params
+const translations = Languages.pages.footer[lang]
 ---
 
 <footer class="w-screen h-24 bg-blue flex items-center justify-between text-white margin">
 
     <div class="flex items-center justify-center gap-4">
 
-        <a href="" target="_blank">
-            Termos e Condições
+        <a href={"/"+lang+"/terms"} target="_blank">
+            {translations.terms}
         </a>
 
-        <a href="" target="_blank">
-            Políticas de Privacidade
+        <a href={"/"+lang+"/policy"} target="_blank">
+            {translations.policy}
         </a>
 
     </div>
 
     <p>
-        © 2024 Achieve Rent A Car. Todos os direitos reservados.
+        {translations.rights}
     </p>
 
 </footer>

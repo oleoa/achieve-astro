@@ -83,6 +83,19 @@
       "pt": {
         "title": "Cadeiras Auto"
       }
+    },
+
+    "footer": {
+      "en": {
+        "rights": "© 2024 Achieve Rent A Car. All rights reserved",
+        "terms": "Terms and Conditions",
+        "policy": "Privacy Policy"
+      },
+      "pt": {
+        "rights": "© 2024 Achieve Rent A Car. Todos os direitos reservados",
+        "terms": "Termos e Condições",
+        "policy": "Políticas de Privacidade"
+      }
     }
   }
 }
