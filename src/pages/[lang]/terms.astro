@@ -4,7 +4,7 @@ interface Params { lang: "en" | "pt" }
 const { lang } = Astro.params as Params
 export function getStaticPaths () { return [ {params: {lang: 'en'}}, {params: {lang: 'pt'}} ] }
 import Languages from "../../assets/translations.json"
-const translations = Languages.pages["home"][lang]
+const translations = Languages.pages["terms"][lang]
 
 import Layout from '../../layouts/Layout.astro'
 ---

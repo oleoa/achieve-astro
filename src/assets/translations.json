@@ -76,14 +76,25 @@
       }
     },
 
+    "terms": {
+      "en": {
+        "title": "Terms and Conditions"
+      },
+      "pt": {
+        "title": "Termos e Condições"
+      }
+    },
+
     "footer": {
       "en": {
-        "rights": "© 2024 Achieve Rent A Car. All rights reserved.",
+        "rights_1": "© 2024 Achieve Rent A Car.",
+        "rights_2": "All rights reserved.",
         "terms": "Terms and Conditions",
         "policy": "Privacy Policy"
       },
       "pt": {
-        "rights": "© 2024 Achieve Rent A Car. Todos os direitos reservados.",
+        "rights_1": "© 2024 Achieve Rent A Car.",
+        "rights_2": "Todos os direitos reservados.",
         "terms": "Termos e Condições",
         "policy": "Políticas de Privacidade"
       }

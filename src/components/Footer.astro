@@ -5,22 +5,27 @@ const { lang } = Astro.props
 const translations = Languages.pages.footer[lang]
 ---
 
-<footer class="w-screen h-24 bg-blue flex flex-col md:flex-row items-center justify-between text-white margin">
+<footer class="w-screen min-h-24 bg-blue flex flex-col md:flex-row items-center justify-between gap-4 text-white margin py-4">
 
-    <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+    <div class="flex flex-col md:flex-row items-start justify-start gap-4 w-full">
 
-        <a href={"/"+lang+"/terms"} target="_blank">
+        <a href={"/"+lang+"/terms"}>
             {translations.terms}
         </a>
 
-        <a href={"/"+lang+"/policy"} target="_blank">
+        <a href={"/"+lang+"/policy"}>
             {translations.policy}
         </a>
 
     </div>
 
-    <p>
-        {translations.rights}
+    <p class="flex flex-col md:flex-row justify-end items-start w-full gap-2">
+        <span>
+            {translations.rights_1}
+        </span>
+        <span>
+            {translations.rights_2}
+        </span>
     </p>
 
 </footer>

@@ -4,7 +4,7 @@ interface Params { lang: "en" | "pt" }
 const { lang } = Astro.params as Params
 export function getStaticPaths () { return [ {params: {lang: 'en'}}, {params: {lang: 'pt'}} ] }
 import Languages from "../../assets/translations.json"
-const translations = Languages.pages["home"][lang]
+const translations = Languages.pages["fleet"][lang]
 
 import Layout from '../../layouts/Layout.astro'
 import Banner from "../../components/Banner.astro"
@@ -17,10 +17,10 @@ const fleet = FleetJson[lang]
 <Layout page={translations.title} lang={lang}>
 
     <Banner page="Fleet" title={translations.title} />
-    <div class="grid md:grid-cols-2 xl:grid-cols-3 margin">
+    <main class="grid md:grid-cols-2 xl:grid-cols-3 gap-12 margin py-12">
         {fleet.map((vehicle) =>
             <Vehicle vehicle={vehicle} translations={translations} lang={lang} />
         )}
-    </div>
+    </main>
 
 </Layout>

@@ -65,7 +65,7 @@ const icons: Record<InfoName, string> = {
 const buttonLinkWhatsappText = lang=="pt"?"Ol%C3%A1%2C%20gostaria%20de%20alugar%20a%20viatura%20de%20":"Hello%2C%20I%20would%20like%20to%20rent%20the%20vehicle%20from%20"
 ---
 
-<div class="flex flex-col justify-center items-start p-12 gap-4">
+<div class="flex flex-col justify-center items-start gap-4">
 
     <img src={image.src} alt={vehicle.group} class="">
 
@@ -73,8 +73,8 @@ const buttonLinkWhatsappText = lang=="pt"?"Ol%C3%A1%2C%20gostaria%20de%20alugar%
 
     <div class="flex flex-wrap gap-2">
         {infosNames.map((info) =>
-            <p class="px-2 flex gap-1">
-                <img src={icons[info]} alt="Prop info" class="w-4">{vehicle.infos[info]}
+            <p class="px-2 flex">
+                <img src={icons[info]} alt="Prop info" class="w-4 pr-1">{vehicle.infos[info]}
             </p>
         )}
     </div>
