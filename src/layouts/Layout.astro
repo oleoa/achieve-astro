@@ -34,9 +34,9 @@ import { toTitleCase } from '../assets/functions.ts'
 	   <Sidebar />
 	   <Navbar lang={lang} />
 
-		<main class={"min-h-screen "+(Ad.is_active?"pt-40":"pt-24")}>
+		<article class={"min-h-screen "+(Ad.is_active?"pt-40":"pt-24")}>
 		    <slot />
-		</main>
+		</article>
 
 		<Footer lang={lang} />
 
@@ -52,13 +52,13 @@ import { toTitleCase } from '../assets/functions.ts'
                     -0.5px -0.5px 0 #DA291C,
                     0.5px -0.5px 0 #DA291C;
             }
-            .contorno {
+            /* .contorno {
                 text-shadow:
                     0.5px 0.5px 0 #000000,
                     -0.5px 0.5px 0 #000000,
                     -0.5px -0.5px 0 #000000,
                     0.5px -0.5px 0 #000000;
-            }
+            } */
             .green-button { @apply px-4 py-2 rounded-lg bg-green-600 text-white no-underline }
 
     	</style>
