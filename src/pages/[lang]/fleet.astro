@@ -17,16 +17,16 @@ import Vehicle from "../../components/fleet/Vehicle.astro"
 import FleetJson from '../../assets/fleet.json'
 
 const { lang } = Astro.params as Params
-const translation = Languages.pages.fleet[lang]
+const translations = Languages.pages.fleet[lang]
 const fleet = FleetJson[lang]
 ---
 
-<Layout>
+<Layout page={translations.title}>
 
-    <Banner page="Fleet" title={translation.title} />
-    <div class="grid grid-cols-3 margin">
+    <Banner page="Fleet" title={translations.title} />
+    <div class="grid md:grid-cols-2 xl:grid-cols-3 margin">
         {fleet.map((vehicle) =>
-            <Vehicle vehicle={vehicle} translation={translation} lang={lang} />
+            <Vehicle vehicle={vehicle} translations={translations} lang={lang} />
         )}
     </div>
 

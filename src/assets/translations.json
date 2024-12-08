@@ -2,6 +2,7 @@
   "pages": {
     "home": {
       "en": {
+        "title": "Home",
         "hero": {
           "title_p1": "Rent a Car on",
           "title_p2": "Madeira Island",
@@ -32,6 +33,7 @@
         }
       },
       "pt": {
+        "title": "Início",
         "hero": {
           "title_p1": "Aluguer de Carros na",
           "title_p2": "Ilha da Madeira",

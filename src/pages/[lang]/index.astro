@@ -21,7 +21,7 @@ const { lang } = Astro.params as Params
 const translations = Languages.pages.home[lang]
 ---
 
-<Layout>
+<Layout page={translations.title}>
     <main class="w-full">
 
         <Hero translations={translations.hero} />

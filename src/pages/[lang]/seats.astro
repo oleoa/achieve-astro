@@ -14,9 +14,9 @@ import Layout from '../../layouts/Layout.astro';
 import Languages from "../../assets/translations.json"
 
 const { lang } = Astro.params as Params;
-const page = Languages.pages.seats[lang];
+const translations = Languages.pages.seats[lang];
 ---
 
-<Layout>
-    <h1 class="text-red-500">{page.title}</h1>
+<Layout page={translations.title}>
+    <h1 class="text-red-500">{translations.title}</h1>
 </Layout>

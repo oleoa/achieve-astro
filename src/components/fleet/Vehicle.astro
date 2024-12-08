@@ -1,5 +1,5 @@
 ---
-const { vehicle, translation, lang } = Astro.props
+const { vehicle, translations, lang } = Astro.props
 
 type InfoName = "doors" | "cluth" | "cc" | "cond" | "people" | "fuel" | "horse" | "steering";
 const infosNames: InfoName[] = [
@@ -79,6 +79,6 @@ const buttonLinkWhatsappText = lang=="pt"?"Ol%C3%A1%2C%20gostaria%20de%20alugar%
         )}
     </div>
 
-    <a target="_blank" href={"https://wa.me/+351938342970?text="+buttonLinkWhatsappText+vehicle.group} class="green-button">{translation.button}</a>
+    <a target="_blank" href={"https://wa.me/+351938342970?text="+buttonLinkWhatsappText+vehicle.group} class="green-button">{translations.button}</a>
 
 </div>

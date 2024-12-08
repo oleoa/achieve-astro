@@ -11,8 +11,7 @@ import EnFlag from '../assets/flags/en.jpg'
 
 const { lang } = Astro.params
 const langPrefix = "/"+lang+"/"
-const path = Astro.url.pathname.split('/')[2] || "";
-const currentPath = Astro.url.pathname
+const path = Astro.url.pathname.split('/')[2] || ""
 
 const links = [
   {
@@ -67,7 +66,7 @@ const { on } = Astro.props
 
     <div id="links" class={"flex items-start gap-6 "+(on=="navbar"?"flex-row":"flex-col")}}>
         {links.map((link) =>
-            <a href={link.src} class={"flex gap-2 "+(currentPath == link.src?"":"no-underline")}><img class="w-4" src={link.icon} alt={link.name+" icon"}>{link.name}</a>
+            <a href={link.src} class="flex gap-2 no-underline"><img class="w-4" src={link.icon} alt={link.name+" icon"}>{link.name}</a>
         )}
     </div>
 
