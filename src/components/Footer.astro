@@ -16,9 +16,9 @@ const { lang } = Astro.params as Params
 const translations = Languages.pages.footer[lang]
 ---
 
-<footer class="w-screen h-24 bg-blue flex items-center justify-between text-white margin">
+<footer class="w-screen h-24 bg-blue flex flex-col md:flex-row items-center justify-between text-white margin">
 
-    <div class="flex items-center justify-center gap-4">
+    <div class="flex flex-col md:flex-row items-center justify-center gap-4">
 
         <a href={"/"+lang+"/terms"} target="_blank">
             {translations.terms}
