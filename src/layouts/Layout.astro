@@ -1,11 +1,10 @@
 ---
-const { lang } = Astro.params;
-const { page } = Astro.props;
+const { page, lang } = Astro.props
 import Ad from '../assets/ad.json'
-import Navbar from '../components/Navbar.astro';
-import Sidebar from '../components/Sidebar.astro';
-import Footer from '../components/Footer.astro';
-import { toTitleCase } from '../assets/functions.ts';
+import Navbar from '../components/Navbar.astro'
+import Sidebar from '../components/Sidebar.astro'
+import Footer from '../components/Footer.astro'
+import { toTitleCase } from '../assets/functions.ts'
 ---
 
 <!doctype html>
@@ -22,13 +21,13 @@ import { toTitleCase } from '../assets/functions.ts';
 	<body class="min-h-screen">
 
 	   <Sidebar />
-	   <Navbar />
+	   <Navbar lang={lang} />
 
 		<main class={"min-h-screen "+(Ad.is_active?"pt-40":"pt-24")}>
 		    <slot />
 		</main>
 
-		<Footer />
+		<Footer lang={lang} />
 
     	<style is:global>
 

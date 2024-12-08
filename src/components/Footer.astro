@@ -1,18 +1,7 @@
 ---
 import Languages from "../assets/translations.json"
-
-interface Params {
-  lang: "en" | "pt"
-}
-
-export function getStaticPaths () {
- return [
-    {params: {lang: 'en'}},
-    {params: {lang: 'pt'}},
-  ]
-}
-
-const { lang } = Astro.params as Params
+interface Props { lang: "en" | "pt" }
+const { lang } = Astro.props
 const translations = Languages.pages.footer[lang]
 ---
 

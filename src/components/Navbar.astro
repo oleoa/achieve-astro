@@ -1,9 +1,10 @@
 ---
+import Ads from './Ads.astro';
 import Logo from "../assets/achieve.webp"
 import SidebarButton from '../assets/icons/sidebar.svg'
 import Navigation from "./Navigation.astro";
-import Ads from './Ads.astro';
-const { lang } = Astro.params;
+
+const { lang } = Astro.props;
 const langPrefix = "/"+lang+"/";
 ---
 
