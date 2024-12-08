@@ -1,0 +1,43 @@
+---
+import Languages from "../../assets/translations.json"
+interface Props { lang: "en" | "pt" }
+const { lang } = Astro.props
+const translations = Languages.pages.seo[lang]
+---
+
+<!-- Description For Search Engine Optimization -->
+<meta name="description" content={translations.description}>
+
+<!-- Locales For Search Engine Optimization -->
+<link rel="alternate" href="/" hreflang="x-default"/>
+<link rel="alternate" href="/en" hreflang="en"/>
+<link rel="alternate" href="/en/fleet" hreflang="en"/>
+<link rel="alternate" href="/en/about" hreflang="en"/>
+<link rel="alternate" href="/en/contact" hreflang="en"/>
+<link rel="alternate" href="/en/terms" hreflang="en"/>
+<link rel="alternate" href="/en/privacy" hreflang="en"/>
+<link rel="alternate" href="/pt" hreflang="pt"/>
+<link rel="alternate" href="/pt/fleet" hreflang="pt"/>
+<link rel="alternate" href="/pt/about" hreflang="pt"/>
+<link rel="alternate" href="/pt/contact" hreflang="pt"/>
+<link rel="alternate" href="/pt/terms" hreflang="pt"/>
+<link rel="alternate" href="/pt/privacy" hreflang="pt"/>
+
+<!-- Canonical Pages For Search Engine Optimization -->
+<link rel="canonical" href="/pt"/>
+
+<!-- Open Graph / Facebook / Instagram / Whatsapp -->
+<meta property="og:title" content={translations.facebook_title}/>
+<meta property="og:description" content={translations.facebook_description}/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Achieve Rent a Car"/>
+<meta property="og:url" content="/pt"/>
+<meta property="og:image" content="/main.jpg"/>
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="Achieve Rent A Car"/>
+<meta name="twitter:title" content={translations.twitter_title}/>
+<meta name="twitter:description" content={translations.twitter_description}/>
+<meta name="twitter:creator" content="@o_leo_a"/>
+<meta name="twitter:image" content="/main.jpg"/>

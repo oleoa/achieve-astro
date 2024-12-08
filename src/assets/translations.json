@@ -85,6 +85,23 @@
       }
     },
 
+    "seo": {
+      "en": {
+        "description": "Rent a car on Madeira Island with Achieve Rent A Car. Explore Madeira Island with our affordable and reliable car rentals.",
+        "facebook_title": "Achieve Rent A Car",
+        "facebook_description": "Rent a car on Madeira Island with Achieve Rent A Car. Explore Madeira Island with our affordable and reliable car rentals.",
+        "twitter_title": "Achieve Rent A Car",
+        "twitter_description": "Rent a car on Madeira Island with Achieve Rent A Car. Explore Madeira Island with our affordable and reliable car rentals."
+      },
+      "pt": {
+        "description": "Alugue um carro na Ilha da Madeira com a Achieve Rent A Car. Explore a Ilha da Madeira com os nossos aluguéis de carros acessíveis e confiáveis.",
+        "facebook_title": "Achieve Rent A Car",
+        "facebook_description": "Alugue um carro na Ilha da Madeira com a Achieve Rent A Car. Explore a Ilha da Madeira com os nossos aluguéis de carros acessíveis e confiáveis.",
+        "twitter_title": "Achieve Rent A Car",
+        "twitter_description": "Alugue um carro na Ilha da Madeira com a Achieve Rent A Car. Explore a Ilha da Madeira com os nossos aluguéis de carros acessíveis e confiáveis."
+      }
+    },
+
     "footer": {
       "en": {
         "rights_1": "© 2024 Achieve Rent A Car.",
