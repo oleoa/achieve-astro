@@ -63,21 +63,23 @@
       }
     },
 
+    "fleet": {
+      "en": {
+        "title": "Fleet",
+        "button": "I want to book this car"
+      },
+      "pt": {
+        "title": "Frota",
+        "button": "Quero alugar esse carro"
+      }
+    },
+
     "seats": {
       "en": {
         "title": "Car Seats"
       },
       "pt": {
         "title": "Cadeiras Auto"
-      }
-    },
-
-    "fleet": {
-      "en": {
-        "title": "Fleet"
-      },
-      "pt": {
-        "title": "Frota"
       }
     }
   }

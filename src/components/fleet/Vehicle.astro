@@ -1,0 +1,84 @@
+---
+const { vehicle, translation, lang } = Astro.props
+
+type InfoName = "doors" | "cluth" | "cc" | "cond" | "people" | "fuel" | "horse" | "steering";
+const infosNames: InfoName[] = [
+  "doors",
+  "cluth",
+  "cc",
+  "cond",
+  "people",
+  "fuel",
+  "horse",
+  "steering"
+]
+
+import Vehicle1Image from "../../assets/fleet/1.png"
+import Vehicle2Image from "../../assets/fleet/2.png"
+import Vehicle3Image from "../../assets/fleet/3.png"
+import Vehicle4Image from "../../assets/fleet/4.png"
+import Vehicle5Image from "../../assets/fleet/5.png"
+import Vehicle6Image from "../../assets/fleet/6.png"
+let image
+switch(vehicle.image) {
+  case "1.png":
+    image = Vehicle1Image;
+    break;
+  case "2.png":
+    image = Vehicle2Image;
+    break;
+  case "3.png":
+    image = Vehicle3Image;
+    break;
+  case "4.png":
+    image = Vehicle4Image;
+    break;
+  case "5.png":
+    image = Vehicle5Image;
+    break;
+  case '6.png':
+    image = Vehicle6Image;
+    break;
+  default:
+    image = Vehicle1Image
+}
+
+import DoorsIcon from "../../assets/icons/door.svg"
+import CluthIcon from "../../assets/icons/cluth.svg"
+import CCIcon from "../../assets/icons/cc.svg"
+import CondIcon from "../../assets/icons/air.svg"
+import PeopleIcon from "../../assets/icons/users.svg"
+import FuelIcon from "../../assets/icons/gas.svg"
+import HorseIcon from "../../assets/icons/horse.svg"
+import SteeringIcon from "../../assets/icons/steering.svg"
+const icons: Record<InfoName, string> = {
+  "doors": DoorsIcon.src,
+  "cluth": CluthIcon.src,
+  "cc": CCIcon.src,
+  "cond": CondIcon.src,
+  "people": PeopleIcon.src,
+  "fuel": FuelIcon.src,
+  "horse": HorseIcon.src,
+  "steering": SteeringIcon.src
+}
+
+const buttonLinkWhatsappText = lang=="pt"?"Ol%C3%A1%2C%20gostaria%20de%20alugar%20a%20viatura%20de%20":"Hello%2C%20I%20would%20like%20to%20rent%20the%20vehicle%20from%20"
+---
+
+<div class="flex flex-col justify-center items-start p-12 gap-4">
+
+    <img src={image.src} alt={vehicle.group} class="">
+
+    <h2 class="text-3xl font-bold">{vehicle.group}</h2>
+
+    <div class="flex flex-wrap gap-2">
+        {infosNames.map((info) =>
+            <p class="px-2 flex gap-1">
+                <img src={icons[info]} alt="Prop info" class="w-4">{vehicle.infos[info]}
+            </p>
+        )}
+    </div>
+
+    <a target="_blank" href={"https://wa.me/+351938342970?text="+buttonLinkWhatsappText+vehicle.group} class="green-button">{translation.button}</a>
+
+</div>

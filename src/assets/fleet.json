@@ -1,0 +1,174 @@
+{
+  "en": [
+    {
+      "image": "1.png",
+      "group": "Group A1",
+      "infos": {
+        "doors": "05",
+        "cluth": "Manual",
+        "cc": "1.0 cc",
+        "cond": "Air Conditioning",
+        "people": "05",
+        "fuel": "Petrol 95",
+        "horse": "70hp",
+        "steering": "Power Steering"
+      }
+    },
+    {
+      "image": "2.png",
+      "group": "Group A2",
+      "infos": {
+        "doors": "05",
+        "cluth": "Manual",
+        "cc": "1.0 cc",
+        "cond": "Air Conditioning",
+        "people": "04",
+        "fuel": "Petrol 95",
+        "horse": "65hp",
+        "steering": "Power Steering"
+      }
+    },
+    {
+      "image": "3.png",
+      "group": "Group A3",
+      "infos": {
+        "doors": "03",
+        "cluth": "Manual",
+        "cc": "1.0 cc",
+        "cond": "Air Conditioning",
+        "people": "04",
+        "fuel": "Petrol 95",
+        "horse": "70hp",
+        "steering": "Power Steering"
+      }
+    },
+    {
+      "image": "4.png",
+      "group": "Group B1",
+      "infos": {
+        "doors": "05",
+        "cluth": "Manual",
+        "cc": "1.2 cc",
+        "cond": "Air Conditioning",
+        "people": "05",
+        "fuel": "Petrol 95",
+        "horse": "80hp",
+        "steering": "Power Steering"
+      }
+    },
+    {
+      "image": "5.png",
+      "group": "Group C1",
+      "infos": {
+        "doors": "05",
+        "cluth": "Manual",
+        "cc": "1.0 cc",
+        "cond": "Air Conditioning",
+        "people": "05",
+        "fuel": "Petrol 95",
+        "horse": "100hp",
+        "steering": "Power Steering"
+      }
+    },
+    {
+      "image": "6.png",
+      "group": "Group C2",
+      "infos": {
+        "doors": "05",
+        "cluth": "Manual",
+        "cc": "1.0 cc",
+        "cond": "Air Conditioning",
+        "people": "05",
+        "fuel": "Petrol 95",
+        "horse": "90hp",
+        "steering": "Power Steering"
+      }
+    }
+  ],
+  "pt": [
+    {
+      "image": "1.png",
+      "group": "Grupo A1",
+      "infos": {
+        "doors": "05",
+        "cluth": "Manual",
+        "cc": "1.0 cc",
+        "cond": "Air Conditioning",
+        "people": "05",
+        "fuel": "Gasolina 95",
+        "horse": "70hp",
+        "steering": "Power Steering"
+      }
+    },
+    {
+      "image": "2.png",
+      "group": "Grupo A2",
+      "infos": {
+        "doors": "05",
+        "cluth": "Manual",
+        "cc": "1.0 cc",
+        "cond": "Air Conditioning",
+        "people": "04",
+        "fuel": "Gasolina 95",
+        "horse": "65hp",
+        "steering": "Power Steering"
+      }
+    },
+    {
+      "image": "3.png",
+      "group": "Grupo A3",
+      "infos": {
+        "doors": "03",
+        "cluth": "Manual",
+        "cc": "1.0 cc",
+        "cond": "Air Conditioning",
+        "people": "04",
+        "fuel": "Gasolina 95",
+        "horse": "70hp",
+        "steering": "Power Steering"
+      }
+    },
+    {
+      "image": "4.png",
+      "group": "Grupo B1",
+      "infos": {
+        "doors": "05",
+        "cluth": "Manual",
+        "cc": "1.2 cc",
+        "cond": "Air Conditioning",
+        "people": "05",
+        "fuel": "Gasolina 95",
+        "horse": "80hp",
+        "steering": "Power Steering"
+      }
+    },
+    {
+      "image": "5.png",
+      "group": "Grupo C1",
+      "infos": {
+        "doors": "05",
+        "cluth": "Manual",
+        "cc": "1.0 cc",
+        "cond": "Air Conditioning",
+        "people": "05",
+        "fuel": "Gasolina 95",
+        "horse": "100hp",
+        "steering": "Power Steering"
+      }
+    },
+    {
+      "image": "6.png",
+      "group": "Grupo C2",
+      "infos": {
+        "doors": "05",
+        "cluth": "Manual",
+        "cc": "1.0 cc",
+        "cond": "Air Conditioning",
+        "people": "05",
+        "fuel": "Gasolina 95",
+        "horse": "90hp",
+        "steering": "Power Steering"
+      }
+    }
+  ]
+}

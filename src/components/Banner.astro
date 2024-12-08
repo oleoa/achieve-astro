@@ -1,0 +1,15 @@
+---
+const { page, title } = Astro.props
+---
+
+<main id={page} class="w-full h-52 flex items-center justify-center bg-no-repeat bg-center">
+    <h1 class="text-6xl text-white font-bold">{title}</h1>
+</main>
+
+<style>
+
+    #Fleet {
+        background-image: url('/src/assets/banners/fleet.jpg');
+    }
+
+</style>
