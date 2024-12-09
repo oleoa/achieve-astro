@@ -1,6 +1,6 @@
 ---
 import Ads from './Ads.astro';
-import Logo from "../assets/achieve.webp"
+import Logo from "../assets/logo.webp"
 import SidebarButton from '../assets/icons/sidebar.svg'
 import Navigation from "./Navigation.astro";
 
@@ -16,7 +16,7 @@ const langPrefix = "/"+lang+"/";
 
         <div id="logo" class="flex items-center">
             <a href={langPrefix}>
-                <img src={Logo.src} alt="Achieve Rent a Car logo" />
+                <img src={Logo.src} alt="Achieve Rent a Car logo" width="306" height="48" />
             </a>
         </div>
 
@@ -25,7 +25,7 @@ const langPrefix = "/"+lang+"/";
         <div id="sidebar_button_holder" class="h-24 flex items-center justify-center lg:hidden">
 
             <button id="sidebar_button">
-                <img src={SidebarButton.src} class="w-6" alt="Click here to open the sidebar" />
+                <img src={SidebarButton.src} class="w-6" width="24" height="24" alt="Click here to open the sidebar" />
             </button>
 
         </div>

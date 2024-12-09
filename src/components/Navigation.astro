@@ -60,14 +60,14 @@ const { on } = Astro.props
 
     <div id="links" class={"flex items-start gap-6 "+(on=="navbar"?"flex-row":"flex-col")}}>
         {links.map((link) =>
-            <a href={link.src} class="flex gap-2 no-underline"><img class="w-4" src={link.icon} alt={link.name+" icon"}>{link.name}</a>
+            <a href={link.src} class="flex gap-2 no-underline"><img class="w-4" width="16" height="16" src={link.icon} alt={link.name+" icon"}>{link.name}</a>
         )}
     </div>
 
     <div id="languages" class={"flex items-center gap-4"}>
         {flags.map((language) =>
             <a href={language.src}>
-                <img src={language.image} alt={language.name} class="rounded">
+                <img src={language.image} alt={language.name} width="32" height="21" class="rounded">
             </a>
         )}
     </div>
