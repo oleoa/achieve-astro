@@ -65,6 +65,23 @@
       }
     },
 
+    "about": {
+      "en": {
+        "title": "About Us",
+        "t_1": "We are a local company",
+        "p_1": "When renting a car in Madeira, count on a local company with a highly motivated team dedicated to welcoming and assisting you. We provide personalized, friendly, and flexible service from the moment you make your booking until you return the car. We are based in Funchal and for your comfort we deliver and collect the car at the location of your choice.",
+        "t_2": "Our focus is your satisfaction",
+        "p_2": "We are people just like you: We like to be well attended to, with care. That's why we work this way: With attention to detail so that you feel welcome and well taken care of. After a quick and uncomplicated booking, we will send you all the information you need to feel safe and oriented. Your satisfaction is our priority. We will do our best to make sure you have an unforgettable experience."
+      },
+      "pt": {
+        "title": "Sobre Nós",
+        "t_1": "Somos uma empresa local",
+        "p_1": "Ao alugar um carro na Madeira, conte com uma empresa local e com uma equipa muito motivada a atender a si de forma acolhedora e atenciosa. Prestamos um atendimento pessoal, amigável e flexível, desde o momento em que você faz a reserva até a devolução do carro. Estamos sediados no Funchal e para o seu conforto entregamos e recolhemos o carro em local de sua escolha.",
+        "t_2": "O nosso foco é a sua satisfação",
+        "p_2": "Somos pessoas como você: Gostamos de ser bem atendidos, com cuidado e esmero. Por isso é assim que trabalhamos: Com atenção aos detalhes, para que sinta-se bem-vindo e bem cuidado. Após uma contratação rápida e sem complicações, enviaremos todas as informaçoes de que precisa para sentir-se seguro e orientado. A nossa prioridade é a sua satisfação. Faremos o nosso melhor para que tenha uma experiência inesquecível."
+      }
+    },
+
     "fleet": {
       "en": {
         "title": "Fleet",

@@ -1,0 +1,42 @@
+---
+// Get language from url and translations from json
+interface Params { lang: "en" | "pt" }
+const { lang } = Astro.params as Params
+export function getStaticPaths () { return [ {params: {lang: 'en'}}, {params: {lang: 'pt'}} ] }
+import Languages from "../../assets/translations.json"
+const translations = Languages.pages["about"][lang]
+
+import Layout from '../../layouts/Layout.astro'
+import Banner from "../../components/Banner.astro"
+
+import Image from "../../assets/images/about.jpg"
+---
+
+<Layout title={translations.title} lang={lang}>
+
+    <Banner page="About" title={translations.title} />
+
+    <div class="w-full margin flex flex-col gap-4 pb-12">
+
+        <div class="grid lg:grid-cols-2 py-12 gap-12 justify-center">
+            <div class="flex flex-col">
+                <h2 class="font-semibold text-3xl xl:text-4xl">
+                    {translations.t_1}
+                    <span class="w-full h-0.5 my-2 bg-blue/50 rounded-full flex"></span>
+                </h2>
+                <p class="pb-8">
+                    {translations.p_1}
+                </p>
+                <h2 class="font-semibold text-3xl xl:text-4xl">
+                    {translations.t_2}
+                    <span class="w-full h-0.5 my-2 bg-blue/50 rounded-full flex"></span>
+                </h2>
+                <p>
+                    {translations.p_2}
+                </p>
+            </div>
+            <img src={Image.src} alt="@lang('Madeira.Island.Image.Alt')" class="rounded-xl w-full h-full object-cover">
+        </div>
+    </div>
+
+</Layout>
