@@ -85,11 +85,20 @@
     "fleet": {
       "en": {
         "title": "Fleet",
-        "button": "I want to book this car"
+        "button": "Book this car"
       },
       "pt": {
         "title": "Frota",
         "button": "Quero alugar esse carro"
+      }
+    },
+
+    "contact": {
+      "en": {
+        "title": "Contact Us"
+      },
+      "pt": {
+        "title": "Contate-nos"
       }
     },
 

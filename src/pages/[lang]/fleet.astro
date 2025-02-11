@@ -17,7 +17,7 @@ const fleet = FleetJson[lang]
 <Layout title={translations.title} lang={lang}>
 
     <Banner page="Fleet" title={translations.title} />
-    <main class="grid md:grid-cols-2 xl:grid-cols-3 gap-12 margin py-12">
+    <main class="grid md:grid-cols-2 xl:grid-cols-3 gap-28 margin py-12">
         {fleet.map((vehicle) =>
             <Vehicle vehicle={vehicle} translations={translations} lang={lang} />
         )}
