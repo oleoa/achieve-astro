@@ -11,6 +11,7 @@ import Hero from '../../components/home/Hero.astro'
 import Anyrent from '../../components/home/Anyrent.astro'
 import Swiper from '../../components/home/Swiper.astro'
 import Features from '../../components/home/Features.astro'
+import Whatsapp from "../../components/Whatsapp.astro"
 ---
 
 <Layout title={translations.title} lang={lang}>
@@ -19,5 +20,6 @@ import Features from '../../components/home/Features.astro'
         <Anyrent translations={translations.anyrent} />
         <Swiper translations={translations.swiper} />
         <Features translations={translations.features} />
+        <Whatsapp />
     </main>
 </Layout>
