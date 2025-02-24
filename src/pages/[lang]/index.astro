@@ -1,16 +1,23 @@
 ---
-// Get language from url and translations from json
+export function getStaticPaths () {
+    return [
+        {params: {lang: 'en'}},
+        {params: {lang: 'pt'}}
+    ]
+}
+
 interface Params { lang: "en" | "pt" }
 const { lang } = Astro.params as Params
-export function getStaticPaths () { return [ {params: {lang: 'en'}}, {params: {lang: 'pt'}} ] }
 import Languages from "../../assets/translations.json"
 const translations = Languages.pages["home"][lang]
 
 import Layout from '../../layouts/Layout.astro'
+
 import Hero from '../../components/home/Hero.astro'
 import Anyrent from '../../components/home/Anyrent.astro'
 import Swiper from '../../components/home/Swiper.astro'
 import Features from '../../components/home/Features.astro'
+import Whatsapp from "../../components/Whatsapp.astro"
 ---
 
 <Layout title={translations.title} lang={lang}>
@@ -19,5 +26,6 @@ import Features from '../../components/home/Features.astro'
         <Anyrent translations={translations.anyrent} />
         <Swiper translations={translations.swiper} />
         <Features translations={translations.features} />
+        <Whatsapp />
     </main>
 </Layout>
