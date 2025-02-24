@@ -1,0 +1,24 @@
+---
+const { lang } = Astro.params
+import Image from "astro/components/Image.astro"
+import WhatsappIcon from "../assets/icons/whatsapp.svg"
+import PtBalloon from "../assets/whatsapp/pt.png"
+import EnBalloon from "../assets/whatsapp/en.png"
+---
+
+<div class="fixed bottom-0 right-0 p-4 z-50">
+  <Image id="balloon" src={lang == "pt" ? PtBalloon : EnBalloon} alt="Click Here to speak with us" class="w-48 -translate-x-10 hidden" />
+  <a href="https://wa.me/938342970" target="_blank" class="flex flex-col items-end gap-1">
+    <Image src={WhatsappIcon} alt="Whatsapp Icon" class="w-16 bg-green-500 px-3 py-2 rounded-2xl" />
+  </a>
+</div>
+
+<script>
+  let balloon = document.getElementById("balloon")
+  setTimeout(() => {
+    balloon?.classList.toggle("hidden")
+  }, 3000)
+  // setTimeout(() => {
+  //   balloon?.classList.toggle("hidden")
+  // }, 20000)
+</script>

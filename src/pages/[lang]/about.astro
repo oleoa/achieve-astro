@@ -10,6 +10,8 @@ import Layout from '../../layouts/Layout.astro'
 import Banner from "../../components/Banner.astro"
 
 import Image from "../../assets/images/about.jpg"
+import AboutUsVideo from "../../assets/videos/about.mp4"
+import SobreNosVideo from "../../assets/videos/sobre.mp4"
 ---
 
 <Layout title={translations.title} lang={lang}>
@@ -35,7 +37,9 @@ import Image from "../../assets/images/about.jpg"
                     {translations.p_2}
                 </p>
             </div>
-            <img src={Image.src} alt="@lang('Madeira.Island.Image.Alt')" class="rounded-xl w-full h-full object-cover">
+            <video src={lang == "pt" ? SobreNosVideo : AboutUsVideo} class="rounded-xl w-full h-full object-cover" controls>
+                <source src={lang == "pt" ? SobreNosVideo : AboutUsVideo}>
+            </video>
         </div>
     </div>
 
