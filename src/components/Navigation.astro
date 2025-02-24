@@ -3,7 +3,8 @@ import HomeIcon from '../assets/icons/home.svg'
 import CarIcon from '../assets/icons/car.svg'
 // import BedIcon from '../assets/icons/bed.svg'
 import PeopleIcon from '../assets/icons/people.svg'
-import EnvelopeIcon from '../assets/icons/envelope.svg'
+import TermsIcon from '../assets/icons/terms.svg'
+// import EnvelopeIcon from '../assets/icons/envelope.svg'
 
 import PtFlag from '../assets/flags/pt.jpg'
 import EnFlag from '../assets/flags/en.jpg'
@@ -37,7 +38,12 @@ const links = [
   //   "src": langPrefix+"contact",
   //   "name": (lang=="pt"?"Contate-nos":"Contact Us"),
   //   "icon": EnvelopeIcon.src
-  // }
+  // },
+  {
+    "src": langPrefix+"terms",
+    "name": (lang=="pt"?"Termos e Condições de Aluguer":"Rental Terms & Conditions"),
+    "icon": TermsIcon.src
+  },
 ]
 
 const flags = [
@@ -58,18 +64,18 @@ const { on } = Astro.props
 
 <div class={"flex items-start gap-6 text-blue "+(on=="navbar"?"flex-row lg:flex hidden":"flex-col")}>
 
-    <div id="links" class={"flex items-start gap-6 "+(on=="navbar"?"flex-row":"flex-col")}}>
-        {links.map((link) =>
-            <a href={link.src} class="flex gap-2 no-underline"><img class="w-4" width="16" height="16" src={link.icon} alt={link.name+" icon"}>{link.name}</a>
-        )}
-    </div>
+  <div id="links" class={"flex items-start gap-6 "+(on=="navbar"?"flex-row":"flex-col")}}>
+    {links.map((link) =>
+      <a href={link.src} class="flex gap-2 no-underline"><img class="w-4" width="16" height="16" src={link.icon} alt={link.name+" icon"}>{link.name}</a>
+    )}
+  </div>
 
-    <div id="languages" class={"flex items-center gap-4"}>
-        {flags.map((language) =>
-            <a href={language.src}>
-                <img src={language.image} alt={language.name} width="32" height="21" class="rounded">
-            </a>
-        )}
-    </div>
+  <div id="languages" class={"flex items-center gap-4"}>
+    {flags.map((language) =>
+      <a href={language.src}>
+        <img src={language.image} alt={language.name} width="32" height="21" class="rounded">
+      </a>
+    )}
+  </div>
 
 </div>

@@ -10,7 +10,11 @@ import Layout from '../../layouts/Layout.astro'
 ---
 
 <Layout title={translations.title} lang={lang}>
-    <main>
-        <iframe src={"https://docs.google.com/viewer?srcid="+(lang=="pt"?"1NdPRs2LDqNGCGEr97lOuaMWDZGd0A8KHgLklXZEuJA0":"17T8IM_Mf5q5SfdNoZ9pZGiF-o6ErhGBnHT1zQ0le6qw")+"&pid=explorer&efh=false&a=v&chrome=false&embedded=true"} class="w-full h-screen"></iframe>
+    <main class="flex items-center justify-center w-screen h-screen py-2">
+        {lang=="pt" ? (
+            <iframe src="https://docs.google.com/document/d/e/2PACX-1vT7n-SYPYk3azQxhEygiEmpZf4TK9_m-d0sTauX42GN2O8TFe9v32_lLXsGUyX-vU-UWdBl7kPVauYq/pub?embedded=true" width="803" class="h-full"></iframe>
+        ) : (
+            <iframe src="https://docs.google.com/document/d/e/2PACX-1vRWlUWAz7nEtZ_ul1fCvaP6eY_HpT_lN41Kyvj1OaTKuvadE9KISyJBJ4Df1AjcZngBycn_PIgj0zef/pub?embedded=true" width="803" class="h-full"></iframe>
+        )}
     </main>
 </Layout>

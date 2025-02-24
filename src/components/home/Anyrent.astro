@@ -4,16 +4,15 @@ const { lang } = Astro.params
 import Ad from '../../assets/ad.json'
 ---
 
-<div class="margin bg-blue/10 flex flex-col justify-start gap-12 xl:gap-24 pb-12 xl:pb-24">
+<div class="margin bg-blue/10 flex flex-col justify-center py-12 xl:py-24">
 
-    <span id="anyrent-scroll" class="relative" style={(Ad.is_active?"top: -10rem;":"top: -6rem;")}></span>
-
-    <h2 class="text-4xl xl:text-5xl font-bold flex items-center justify-center text-center text-blue">
+    <h2 class="text-4xl xl:text-5xl font-bold flex items-center justify-center text-center text-blue pb-12">
         Achieve the best
         <br />
         {translations.title}
     </h2>
 
+    <span id="anyrent-scroll" class="relative" style={(Ad.is_active?"top: -10rem;":"top: -6rem;")}></span>
     <anyrent-iframe data-locale={lang}></anyrent-iframe>
     <script id="jedeyeScript" src="https://reservas.achieverentacar.com/themes/iframe/assets/vendor/anyrent-booking-engine.min.js"></script>
 
@@ -36,8 +35,7 @@ import Ad from '../../assets/ad.json'
   document.addEventListener('DOMContentLoaded', () =>
   {
     const system = document.getElementById('anyrentBookingsIframe') as HTMLIFrameElement
-    if (system)
-    {
+    if (system){
       system.title = 'Anyrent Bookings System'
       system.style.borderRadius = "0.375rem"
 
@@ -48,9 +46,9 @@ import Ad from '../../assets/ad.json'
           if (event.source === system.contentWindow) {
             if (event.data.type === "arIframeUrlChange") {
 
-              //let newURL = event.data.url;
-              //console.debug("URL mudou: " + newURL);
-              //console.log(JSON.stringify(event.data));
+              // let newURL = event.data.url;
+              // console.debug("URL mudou: " + newURL);
+              // console.log(event.data);
 
               if(!firstTime){
                 setTimeout(function(){

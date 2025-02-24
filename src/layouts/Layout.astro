@@ -8,6 +8,8 @@ import Ad from '../assets/ad.json'
 import Navbar from '../components/Navbar.astro'
 import Sidebar from '../components/Sidebar.astro'
 import Footer from '../components/Footer.astro'
+import GoogleTagManagerHead from '../components/GoogleTagManagerHead.astro'
+import GoogleTagManagerBody from '../components/GoogleTagManagerBody.astro'
 import { toTitleCase } from '../assets/functions.ts'
 ---
 
@@ -16,6 +18,7 @@ import { toTitleCase } from '../assets/functions.ts'
 
 	<head>
 	    <Cookie />
+	    <GoogleTagManagerHead />
 	    <Author />
 	    <Seo lang={lang} />
 
@@ -30,7 +33,7 @@ import { toTitleCase } from '../assets/functions.ts'
 	</head>
 
 	<body class="min-h-screen flex flex-col justify-between">
-
+		 <GoogleTagManagerBody />
 	   <Sidebar />
 	   <Navbar lang={lang} />
 
