@@ -1,12 +1,18 @@
 ---
-// Get language from url and translations from json
+export function getStaticPaths () {
+    return [
+        {params: {lang: 'en'}},
+        {params: {lang: 'pt'}}
+    ]
+}
+
 interface Params { lang: "en" | "pt" }
 const { lang } = Astro.params as Params
-export function getStaticPaths () { return [ {params: {lang: 'en'}}, {params: {lang: 'pt'}} ] }
 import Languages from "../../assets/translations.json"
 const translations = Languages.pages["home"][lang]
 
 import Layout from '../../layouts/Layout.astro'
+
 import Hero from '../../components/home/Hero.astro'
 import Anyrent from '../../components/home/Anyrent.astro'
 import Swiper from '../../components/home/Swiper.astro'
