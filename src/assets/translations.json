@@ -1,5 +1,6 @@
 {
   "pages": {
+
     "home": {
       "en": {
         "title": "Home",
@@ -90,6 +91,15 @@
       "pt": {
         "title": "Frota",
         "button": "Quero alugar esse carro"
+      }
+    },
+
+    "video": {
+      "en": {
+        "title": "Video"
+      },
+      "pt": {
+        "title": "Video"
       }
     },
 
