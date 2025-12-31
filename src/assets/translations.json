@@ -1,6 +1,5 @@
 {
   "pages": {
-
     "home": {
       "en": {
         "title": "Home",
@@ -9,8 +8,8 @@
           "title_p2": "Madeira Island",
           "checklist_p1": "5 stars rated service",
           "checklist_p2": "Pick up and drop off anywhere you like",
-          "checklist_p3": "Premium Insurance included",
-          "checklist_p4": "No excess, no credit card needed",
+          "checklist_p3": "Complete transparency, no surprises.",
+          "checklist_p4": "No credit card needed",
           "checklist_p5": "Unlimited mileage",
           "checklist_p6": "Free additional driver",
           "checklist_p7": "24/7 Roadside Assistance",
@@ -40,8 +39,8 @@
           "title_p2": "Ilha da Madeira",
           "checklist_p1": "Atendimento avaliado em 5 estrelas",
           "checklist_p2": "Receba e devolva onde quiser",
-          "checklist_p3": "Valor com seguro Premium incluído",
-          "checklist_p4": "Sem franquia, sem cartão de crédito",
+          "checklist_p3": "Transparência total, sem surpresas",
+          "checklist_p4": "Sem cartão de crédito",
           "checklist_p5": "Quilometragem ilimitada",
           "checklist_p6": "Condutor adicional gratuito",
           "checklist_p7": "Assistência Rodoviária 24/7",
