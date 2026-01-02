@@ -17,7 +17,23 @@
           "button_2": "Check our reviews"
         },
         "anyrent": {
-          "title": "Book with us"
+          "title": "Book with us",
+          "table": {
+            "title": "Pick-up and Return Times",
+            "line1": {
+              "title": "Normal:",
+              "time": "Every day from 08:00 am to 08:00 pm"
+            },
+            "line2": {
+              "title": "Out of hours (Only Airport):",
+              "time2": "Every day from 08:01 pm to 07:59 am"
+            },
+            "line3": {
+              "title": "Closed:",
+              "time2": "Wednesday from 07:00 pm to 09:59 pm",
+              "time3": "Saturday from 06:00 pm to 08:59 pm"
+            }
+          }
         },
         "swiper": {
           "title": "What our customers say"
@@ -48,7 +64,23 @@
           "button_2": "Veja nossas reviews"
         },
         "anyrent": {
-          "title": "Reserve connosco"
+          "title": "Reserve connosco",
+          "table": {
+            "title": "Horarios de Levantamento e Devolução",
+            "line1": {
+              "title": "Normal:",
+              "time": "Todos os dias das 08:00 às 20:00"
+            },
+            "line2": {
+              "title": "Fora de Horas (Só Aeroporto):",
+              "time2": "Todos os dias das 20:01 às 07:59"
+            },
+            "line3": {
+              "title": "Encerrado:",
+              "time2": "Quartas-Feiras das 19:00 às 21:59",
+              "time3": "Sábados das 18:00 às 20:59"
+            }
+          }
         },
         "swiper": {
           "title": "O que dizem os nossos clientes"
