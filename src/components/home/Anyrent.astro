@@ -79,9 +79,15 @@ import Ad from '../../assets/ad.json'
                 time_table?.classList.remove("hidden")
               }
 
-              if (step == "step2") {
+              if (step != "step2") {
                 time_table?.classList.add("hidden")
                 time_table?.classList.remove("flex")
+              }
+
+              if (step == "finish") {
+                fetch('https://oleoa.app.n8n.cloud/webhook/3af67b23-2599-4607-b064-b62878460169', {
+                  method: 'GET'
+                })
               }
 
               if(!firstTime){

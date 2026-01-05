@@ -1,0 +1,177 @@
+---
+// Get language from url and translations from json
+interface Params { lang: "en" | "pt" }
+const { lang } = Astro.params as Params
+export function getStaticPaths () { return [ {params: {lang: 'en'}}, {params: {lang: 'pt'}} ] }
+import Languages from "../../assets/translations.json"
+const translations = Languages.pages["insurance"][lang]
+
+import Layout from '../../layouts/Layout.astro'
+---
+
+<Layout title={translations.title} lang={lang}>
+
+    <div class="w-full margin flex justify-center items-center py-8">
+      
+      <div class="overflow-x-auto">
+        <table class="min-w-full text-sm text-left text-gray-700 border border-gray-200">
+          <thead class="bg-gray-100 text-xs uppercase font-semibold text-gray-600">
+            <tr>
+              <th class="px-4 py-3 border-b border-gray-200">{translations.c1r1}</th>
+              <th class="px-4 py-3 border-b border-gray-200">{translations.c2r1}</th>
+              <th class="px-4 py-3 border-b border-gray-200">{translations.c3r1}</th>
+              <th class="px-4 py-3 border-b border-gray-200">{translations.c4r1}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-gray-200">
+              <td class="px-4 py-2">{translations.c1r2}</td>
+              <td class="px-4 py-2">-</td>
+              <td class="px-4 py-2">✅</td>
+              <td class="px-4 py-2">✅</td>
+            </tr>
+            <tr class="bg-gray-50 border-b border-gray-200">
+              <td class="px-4 py-2">{translations.c1r3}</td>
+              <td class="px-4 py-2">-</td>
+              <td class="px-4 py-2">✅</td>
+              <td class="px-4 py-2">✅</td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <td class="px-4 py-2">{translations.c1r4}</td>
+              <td class="px-4 py-2">-</td>
+              <td class="px-4 py-2">✅</td>
+              <td class="px-4 py-2">✅</td>
+            </tr>
+            <tr class="bg-gray-50 border-b border-gray-200">
+              <td class="px-4 py-2">{translations.c1r5}</td>
+              <td class="px-4 py-2">-</td>
+              <td class="px-4 py-2">✅</td>
+              <td class="px-4 py-2">✅</td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <td class="px-4 py-2">{translations.c1r6}</td>
+              <td class="px-4 py-2">-</td>
+              <td class="px-4 py-2">✅</td>
+              <td class="px-4 py-2">✅</td>
+            </tr>
+            <tr class="bg-gray-50 border-b border-gray-200">
+              <td class="px-4 py-2">{translations.c1r7}</td>
+              <td class="px-4 py-2">-</td>
+              <td class="px-4 py-2">✅</td>
+              <td class="px-4 py-2">✅</td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <td class="px-4 py-2">{translations.c1r8}</td>
+              <td class="px-4 py-2">-</td>
+              <td class="px-4 py-2">✅</td>
+              <td class="px-4 py-2">✅</td>
+            </tr>
+            <tr class="bg-gray-50 border-b border-gray-200">
+              <td class="px-4 py-2">{translations.c1r9}</td>
+              <td class="px-4 py-2">{translations.c2r9}</td>
+              <td class="px-4 py-2">❌</td>
+              <td class="px-4 py-2">✅</td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <td class="px-4 py-2">{translations.c1r10}</td>
+              <td class="px-4 py-2">{translations.c2r10}</td>
+              <td class="px-4 py-2">❌</td>
+              <td class="px-4 py-2">✅</td>
+            </tr>
+            <tr class="bg-gray-50 border-b border-gray-200">
+              <td class="px-4 py-2">{translations.c1r11}</td>
+              <td class="px-4 py-2">{translations.c2r11}</td>
+              <td class="px-4 py-2">❌</td>
+              <td class="px-4 py-2">✅</td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <td class="px-4 py-2">{translations.c1r12}</td>
+              <td class="px-4 py-2">{translations.c2r12}</td>
+              <td class="px-4 py-2">❌</td>
+              <td class="px-4 py-2">✅</td>
+            </tr>
+            <tr class="bg-gray-50 border-b border-gray-200">
+              <td class="px-4 py-2">{translations.c1r13}</td>
+              <td class="px-4 py-2">{translations.c2r13}</td>
+              <td class="px-4 py-2">❌</td>
+              <td class="px-4 py-2">✅</td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <td class="px-4 py-2">{translations.c1r14}</td>
+              <td class="px-4 py-2">{translations.c2r14}</td>
+              <td class="px-4 py-2">❌</td>
+              <td class="px-4 py-2">✅</td>
+            </tr>
+            <tr class="bg-gray-50 border-b border-gray-200">
+              <td class="px-4 py-2">{translations.c1r15}</td>
+              <td class="px-4 py-2">{translations.c2r15}</td>
+              <td class="px-4 py-2">❌</td>
+              <td class="px-4 py-2">✅</td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <td class="px-4 py-2">{translations.c1r16}</td>
+              <td class="px-4 py-2">{translations.c2r16}</td>
+              <td class="px-4 py-2">❌</td>
+              <td class="px-4 py-2">✅</td>
+            </tr>
+            <tr class="bg-gray-50 border-b border-gray-200">
+              <td class="px-4 py-2">{translations.c1r17}</td>
+              <td class="px-4 py-2">{translations.c2r17}</td>
+              <td class="px-4 py-2">❌</td>
+              <td class="px-4 py-2">❌</td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <td class="px-4 py-2">{translations.c1r18}</td>
+              <td class="px-4 py-2">{translations.c2r18}</td>
+              <td class="px-4 py-2">❌</td>
+              <td class="px-4 py-2">❌</td>
+            </tr>
+            <tr class="bg-gray-50 border-b border-gray-200">
+              <td class="px-4 py-2">{translations.c1r19}</td>
+              <td class="px-4 py-2">{translations.c2r19}</td>
+              <td class="px-4 py-2">❌</td>
+              <td class="px-4 py-2">❌</td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <td class="px-4 py-2">{translations.c1r20}</td>
+              <td class="px-4 py-2">{translations.c2r20}</td>
+              <td class="px-4 py-2">❌</td>
+              <td class="px-4 py-2">❌</td>
+            </tr>
+            <tr class="bg-gray-50 border-b border-gray-200">
+              <td class="px-4 py-2">{translations.c1r21}</td>
+              <td class="px-4 py-2">{translations.c2r21}</td>
+              <td class="px-4 py-2">❌</td>
+              <td class="px-4 py-2">❌</td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <td class="px-4 py-2">{translations.c1r22}</td>
+              <td class="px-4 py-2">{translations.c2r22}</td>
+              <td class="px-4 py-2">❌</td>
+              <td class="px-4 py-2">❌</td>
+            </tr>
+            <tr class="bg-gray-50 border-b border-gray-200">
+              <td class="px-4 py-2">{translations.c1r23}</td>
+              <td class="px-4 py-2">{translations.c2r23}</td>
+              <td class="px-4 py-2">❌</td>
+              <td class="px-4 py-2">❌</td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <td class="px-4 py-2">{translations.c1r24}</td>
+              <td class="px-4 py-2">{translations.c2r24}</td>
+              <td class="px-4 py-2">❌</td>
+              <td class="px-4 py-2">❌</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2">{translations.c1r25}</td>
+              <td class="px-4 py-2">{translations.c2r25}</td>
+              <td class="px-4 py-2">❌</td>
+              <td class="px-4 py-2">❌</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+</Layout>
