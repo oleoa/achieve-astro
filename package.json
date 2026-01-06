@@ -13,6 +13,7 @@
     "@astrojs/tailwind": "^6.0.0",
     "@notionhq/client": "^2.2.15",
     "astro": "^5.2.3",
+    "marked": "^17.0.1",
     "swiper": "^11.1.15",
     "tailwindcss": "^3.4.15",
     "typescript": "^5.7.2"
