@@ -1,11 +1,11 @@
 {
-  "text": "Take advantage of the 14% discount with Achieve Cover+ Insurance!<br />Select Achieve Cover+ insurance and enter the code COVER+14!<br />Valid for rentals with pick-up until January 25th.<br />",
-  "texto": "Aproveite o desconto de 14% com o Seguro Achieve Cover+!<br />Selecione o Seguro Achieve Cover+ e insira o código COVER+14!<br />Válido para alugueres com levantamento até 25/01.<br />",
-  "text_mobile": "Take advantage of the 14% discount with Achieve Cover+ Insurance!<br />Select Achieve Cover+ insurance and enter the code COVER+14!<br />Valid for rentals with pick-up until January 25th.<br />",
-  "texto_mobile": "Aproveite o desconto de 14% com o Seguro Achieve Cover+!<br />Selecione o Seguro Achieve Cover+ e insira o código COVER+14!<br />Válido para alugueres com levantamento até 25/01.<br />",
+  "text": "Take advantage of a very special discount with Achieve Cover+ Insurance included!<br />Enter the code PROMO<br />Valid for rentals with pick-up until January 31th.",
+  "texto": "Aproveite um desconto pra lá de especial já com o Seguro Achieve Cover+ incluído!<br />Insira o código PROMO<br />Válido para alugueres com levantamento até 31/01.",
+  "text_mobile": "Take advantage of a very special discount with Achieve Cover+ Insurance included!<br />Enter the code PROMO<br />Valid for rentals with pick-up until January 31th.",
+  "texto_mobile": "Aproveite um desconto pra lá de especial já com o Seguro Achieve Cover+ incluído!<br />Insira o código PROMO<br />Válido para alugueres com levantamento até 31/01.",
   "background_color": "#ffdd1c",
   "text_color": "#000000",
-  "is_active": false,
+  "is_active": true,
   "_colors": {
     "yellow": "#ffdd1c",
     "red": "#e51b11",
