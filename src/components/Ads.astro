@@ -4,20 +4,16 @@ import Ad from '../assets/ad.json'
 ---
 
 {Ad.is_active && (
-    <div class="text-xs md:text-xl py-4 margin flex justify-center items-center font-semibold h-16" style={"background-color: "+Ad.background_color+"; color: "+Ad.text_color+";"}>
-        <p class="w-full h-full text-center md:block hidden">
-            {lang=="en"?(
+    <div class="text-xs md:text-xl py-4 margin flex justify-center items-center font-semibold" style={"background-color: "+Ad.background_color+"; color: "+Ad.text_color+";"}>
+        <p class="w-full h-full text-center md:block hidden" set:html={lang=="en"?(
               Ad.text
             ):(
               Ad.texto
-            )}
-        </p>
-        <p class="w-full h-full text-start md:hidden block text-base">
-            {lang=="en"?(
+            )} />
+        <p class="w-full h-full text-center md:hidden block text-sm" set:html={lang=="en"?(
               Ad.text_mobile
             ):(
               Ad.texto_mobile
-            )}
-        </p>
+            )}/>
     </div>
 )}

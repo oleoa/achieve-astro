@@ -37,8 +37,8 @@ import { toTitleCase } from '../assets/functions.ts'
 	   <Sidebar />
 	   <Navbar lang={lang} />
 
-		<article class={Ad.is_active?"pt-40":"pt-24"}>
-		    <slot />
+		<article>
+			<slot />
 		</article>
 
 		<Footer lang={lang} />
