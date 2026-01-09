@@ -1,0 +1,7 @@
+---
+export const prerender = false;
+const { lang, booking_nr, percent } = Astro.params
+if (lang != "en" && lang != 'pt') return
+const response = await fetch("https://oleoa.app.n8n.cloud/webhook/stripe?booking_nr="+booking_nr+"&lang="+lang+"&percent="+percent).then(r => r.json())
+return Astro.redirect(response.url)
+---
