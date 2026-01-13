@@ -5,7 +5,7 @@
   "texto_mobile": "Aproveite um desconto pra lá de especial já com o Seguro Achieve Cover+ incluído!<br />Insira o código PROMO<br />Válido para alugueres com levantamento até 31/01.",
   "background_color": "#ffdd1c",
   "text_color": "#000000",
-  "is_active": true,
+  "is_active": false,
   "_colors": {
     "yellow": "#ffdd1c",
     "red": "#e51b11",
